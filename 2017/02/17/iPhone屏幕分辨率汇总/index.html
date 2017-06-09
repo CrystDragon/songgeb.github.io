@@ -12,10 +12,12 @@
 <meta property="og:url" content="http://songgeb.github.io/2017/02/17/iPhone屏幕分辨率汇总/index.html">
 <meta property="og:site_name" content="Songgeb">
 <meta property="og:description" content="iPhone屏幕尺寸   机型 逻辑尺寸(point) 屏幕分辨率 scale factor 长宽比（近似值） 英寸     iPhonoe 4/4s 320*480 640*960 @2x 1.5 3.5   iPhone 5/5c/5s/SE 320*568 640*1136 @2x 1.775（16:9） 4   iPhone 6/6s/7 375*667 750*1334 @2x 1.77">
-<meta property="og:updated_time" content="2017-05-21T10:41:11.574Z">
+<meta property="og:image" content="http://songgeb.github.io/images/jsontoobj.png">
+<meta property="og:updated_time" content="2017-06-09T05:58:17.226Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS琐碎知识整理">
 <meta name="twitter:description" content="iPhone屏幕尺寸   机型 逻辑尺寸(point) 屏幕分辨率 scale factor 长宽比（近似值） 英寸     iPhonoe 4/4s 320*480 640*960 @2x 1.5 3.5   iPhone 5/5c/5s/SE 320*568 640*1136 @2x 1.775（16:9） 4   iPhone 6/6s/7 375*667 750*1334 @2x 1.77">
+<meta name="twitter:image" content="http://songgeb.github.io/images/jsontoobj.png">
   
     <link rel="alternate" href="/atom.xml" title="Songgeb" type="application/atom+xml">
   
@@ -167,7 +169,94 @@
 </tbody>
 </table>
 <p><a href="http://charlesproxy.com/getssl" target="_blank" rel="external">http://charlesproxy.com/getssl</a></p>
-<p>###正则表达式<br>iOS 可以捕获分组<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">for (NSTextCheckingResult *match in results) &#123;</div><div class="line">    NSRange matchRange = [match range];</div><div class="line">    NSRange first = [match rangeAtIndex:1];</div><div class="line">    NSRange second = [match rangeAtIndex:2];</div><div class="line">    NSLog(@&quot;1:%@ 2:%@.&quot;, [NSValue valueWithRange:first], [NSValue valueWithRange:second]);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h3><p>iOS 可以捕获分组<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">for (NSTextCheckingResult *match in results) &#123;</div><div class="line">    NSRange matchRange = [match range];</div><div class="line">    NSRange first = [match rangeAtIndex:1];</div><div class="line">    NSRange second = [match rangeAtIndex:2];</div><div class="line">    NSLog(@&quot;1:%@ 2:%@.&quot;, [NSValue valueWithRange:first], [NSValue valueWithRange:second]);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="ios中处理json时注意事项"><a href="#iOS中处理json时注意事项" class="headerlink" title="iOS中处理json时注意事项"></a>iOS中处理json时注意事项</h3><ul>
+<li>支持的json类型</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">json支持的数据类型</th>
+<th style="text-align:center">iOS中对应的类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">string</td>
+<td style="text-align:center">NSString</td>
+</tr>
+<tr>
+<td style="text-align:center">number</td>
+<td style="text-align:center">NSNumber</td>
+</tr>
+<tr>
+<td style="text-align:center">array</td>
+<td style="text-align:center">NSArray</td>
+</tr>
+<tr>
+<td style="text-align:center">boolean</td>
+<td style="text-align:center">NSNumber</td>
+</tr>
+<tr>
+<td style="text-align:center">object</td>
+<td style="text-align:center">NSDictionary</td>
+</tr>
+<tr>
+<td style="text-align:center">null</td>
+<td style="text-align:center">NSNull</td>
+</tr>
+</tbody>
+</table>
+<p>测试代码基于<code>XCode 8.3.2</code> + <code>iOS 10</code><br><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">NSString</span> *jsonStr = <span class="string">@"&#123; \</span></div><div class="line">                           \"stringkey\" : \"string\", \</div><div class="line">                           \"numberkey\" : 1, \</div><div class="line">                           \"arraykey\"  : [\"a\"], \</div><div class="line">                           \"boolkey\"   : true, \</div><div class="line">                           \"objectkey\" : &#123;\"key\":2&#125;, \</div><div class="line">                           \"nullkey\"   : null \</div><div class="line">                        &#125;";</div><div class="line"><span class="built_in">NSData</span> *jsonData = [jsonStr dataUsingEncoding:<span class="built_in">NSUTF8StringEncoding</span>];</div><div class="line"><span class="built_in">NSError</span> *error = <span class="literal">nil</span>;</div><div class="line"><span class="keyword">id</span> object = [<span class="built_in">NSJSONSerialization</span> JSONObjectWithData:jsonData</div><div class="line">                                    options:<span class="built_in">NSJSONReadingAllowFragments</span></div><div class="line">                                      error:&amp;error];</div><div class="line"><span class="built_in">NSLog</span>(<span class="string">@"parsed object : %@"</span>, object);</div><div class="line"><span class="built_in">NSLog</span>(<span class="string">@"bool type in json equals NSNumber in Objc ? : %d"</span>, [object[<span class="string">@"boolkey"</span>] isKindOfClass:[<span class="built_in">NSNumber</span> <span class="keyword">class</span>]]);</div></pre></td></tr></table></figure></p>
+<p>结果</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">parsed object : &#123;</div><div class="line">    arraykey =     (</div><div class="line">        a</div><div class="line">    );</div><div class="line">    boolkey = 1;</div><div class="line">    nullkey = &quot;&lt;null&gt;&quot;;</div><div class="line">    numberkey = 1;</div><div class="line">    objectkey =     &#123;</div><div class="line">        key = 2;</div><div class="line">    &#125;;</div><div class="line">    stringkey = string;</div><div class="line">&#125;</div><div class="line">bool type in json equals NSNumber in Objc ? : 1</div></pre></td></tr></table></figure>
+<p>json转为Objc对象的实际类型可能是上面列表中列出的类的子类，通过断点可以看出：</p>
+<p><img src="/images/jsontoobj.png" alt=""></p>
+<ul>
+<li>使用iOS<code>NSJSONSerialization</code>进行Json to object时</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">NSJSONReadingOptions</th>
+<th style="text-align:left">官方说明</th>
+<th style="text-align:left">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">NSJSONReadingAllowFragments</td>
+<td style="text-align:left">Set the NSJSONReadingAllowFragments option if the parser should allow top-level objects that are not an NSArray or NSDictionary.</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:center">NSJSONReadingMutableLeaves</td>
+<td style="text-align:left">Setting the NSJSONReadingMutableLeaves option will make the parser generate mutable NSString objects.</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:center">NSJSONReadingMutableContainers</td>
+<td style="text-align:left">Setting the NSJSONReadingMutableContainers option will make the parser generate mutable NSArrays and NSDictionaries.</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>使用iOS<code>NSJSONSerialization</code>进行object to json时</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">NSJSONWritingOptions</th>
+<th style="text-align:left">官方说明</th>
+<th style="text-align:left">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
 
       
     </div>
