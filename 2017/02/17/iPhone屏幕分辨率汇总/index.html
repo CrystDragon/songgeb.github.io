@@ -5,18 +5,18 @@
   
   <title>iOS琐碎知识整理 | Songgeb</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="iPhone屏幕尺寸 架构与机型 正则表达式 iOS中处理json时注意事项   iPhone屏幕尺寸   机型 逻辑尺寸(point) 屏幕分辨率 scale factor 长宽比（近似值） 英寸     iPhonoe 4/4s 320*480 640*960 @2x 1.5 3.5   iPhone 5/5c/5s/SE 320*568 640*1136 @2x 1.775（16:9）">
+  <meta name="description" content="charles证书配置 iPhone屏幕尺寸 架构与机型 正则表达式 iOS中处理json时注意事项 如何隐藏status bar 一个开关，两种途径隐藏状态栏     charles证书配置手机safari输入charles证书地址 Note: iOS 10.3的新坑，进入设置-&amp;gt;通用-&amp;gt;关于手机-&amp;gt;证书信任设置，里面有对chales证书的设置，10.3之前，当上面的证书安">
 <meta name="keywords" content="iPhone屏幕">
 <meta property="og:type" content="article">
 <meta property="og:title" content="iOS琐碎知识整理">
 <meta property="og:url" content="http://songgeb.github.io/2017/02/17/iPhone屏幕分辨率汇总/index.html">
 <meta property="og:site_name" content="Songgeb">
-<meta property="og:description" content="iPhone屏幕尺寸 架构与机型 正则表达式 iOS中处理json时注意事项   iPhone屏幕尺寸   机型 逻辑尺寸(point) 屏幕分辨率 scale factor 长宽比（近似值） 英寸     iPhonoe 4/4s 320*480 640*960 @2x 1.5 3.5   iPhone 5/5c/5s/SE 320*568 640*1136 @2x 1.775（16:9）">
+<meta property="og:description" content="charles证书配置 iPhone屏幕尺寸 架构与机型 正则表达式 iOS中处理json时注意事项 如何隐藏status bar 一个开关，两种途径隐藏状态栏     charles证书配置手机safari输入charles证书地址 Note: iOS 10.3的新坑，进入设置-&amp;gt;通用-&amp;gt;关于手机-&amp;gt;证书信任设置，里面有对chales证书的设置，10.3之前，当上面的证书安">
 <meta property="og:image" content="http://songgeb.github.io/images/jsontoobj.png">
-<meta property="og:updated_time" content="2017-06-09T06:05:31.108Z">
+<meta property="og:updated_time" content="2017-06-12T07:23:57.681Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS琐碎知识整理">
-<meta name="twitter:description" content="iPhone屏幕尺寸 架构与机型 正则表达式 iOS中处理json时注意事项   iPhone屏幕尺寸   机型 逻辑尺寸(point) 屏幕分辨率 scale factor 长宽比（近似值） 英寸     iPhonoe 4/4s 320*480 640*960 @2x 1.5 3.5   iPhone 5/5c/5s/SE 320*568 640*1136 @2x 1.775（16:9）">
+<meta name="twitter:description" content="charles证书配置 iPhone屏幕尺寸 架构与机型 正则表达式 iOS中处理json时注意事项 如何隐藏status bar 一个开关，两种途径隐藏状态栏     charles证书配置手机safari输入charles证书地址 Note: iOS 10.3的新坑，进入设置-&amp;gt;通用-&amp;gt;关于手机-&amp;gt;证书信任设置，里面有对chales证书的设置，10.3之前，当上面的证书安">
 <meta name="twitter:image" content="http://songgeb.github.io/images/jsontoobj.png">
   
     <link rel="alternate" href="/atom.xml" title="Songgeb" type="application/atom+xml">
@@ -94,12 +94,19 @@
       
         <!-- toc -->
 <ul>
+<li><a href="#charles证书配置">charles证书配置</a></li>
 <li><a href="#iphone屏幕尺寸">iPhone屏幕尺寸</a></li>
 <li><a href="#架构与机型">架构与机型</a></li>
 <li><a href="#正则表达式">正则表达式</a></li>
 <li><a href="#ios中处理json时注意事项">iOS中处理json时注意事项</a></li>
+<li><a href="#如何隐藏status-bar">如何隐藏status bar</a><ul>
+<li><a href="#一个开关两种途径隐藏状态栏">一个开关，两种途径隐藏状态栏</a></li>
+</ul>
+</li>
 </ul>
 <!-- tocstop -->
+<h3 id="charles证书配置"><a href="#charles证书配置" class="headerlink" title="charles证书配置"></a>charles证书配置</h3><p>手机safari输入charles证书地址<a href="http://charlesproxy.com/getssl" target="_blank" rel="external"></a></p>
+<p>Note: iOS 10.3的新坑，进入设置-&gt;通用-&gt;关于手机-&gt;证书信任设置，里面有对chales证书的设置，10.3之前，当上面的证书安装后，这里会自动选为信任；10.3之后，默认则是关闭的，所以还在开启一下这里。</p>
 <h3 id="iphone屏幕尺寸"><a href="#iPhone屏幕尺寸" class="headerlink" title="iPhone屏幕尺寸"></a>iPhone屏幕尺寸</h3><table>
 <thead>
 <tr>
@@ -176,7 +183,6 @@
 </tr>
 </tbody>
 </table>
-<p><a href="http://charlesproxy.com/getssl" target="_blank" rel="external">http://charlesproxy.com/getssl</a></p>
 <h3 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h3><p>iOS 可以捕获分组<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">for (NSTextCheckingResult *match in results) &#123;</div><div class="line">    NSRange matchRange = [match range];</div><div class="line">    NSRange first = [match rangeAtIndex:1];</div><div class="line">    NSRange second = [match rangeAtIndex:2];</div><div class="line">    NSLog(@&quot;1:%@ 2:%@.&quot;, [NSValue valueWithRange:first], [NSValue valueWithRange:second]);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <h3 id="ios中处理json时注意事项"><a href="#iOS中处理json时注意事项" class="headerlink" title="iOS中处理json时注意事项"></a>iOS中处理json时注意事项</h3><ul>
 <li>支持的json类型</li>
@@ -265,6 +271,10 @@
 </tr>
 </tbody>
 </table>
+<h3 id="如何隐藏status-bar"><a href="#如何隐藏status-bar" class="headerlink" title="如何隐藏status bar"></a>如何隐藏status bar</h3><h4 id="一个开关两种途径隐藏状态栏"><a href="#一个开关，两种途径隐藏状态栏" class="headerlink" title="一个开关，两种途径隐藏状态栏"></a>一个开关，两种途径隐藏状态栏</h4><ol>
+<li>全局隐藏，所有页面都隐藏</li>
+<li>每个<code>UIViewController</code>来决定当前页面是否隐藏</li>
+</ol>
 
       
     </div>
