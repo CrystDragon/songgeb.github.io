@@ -61,6 +61,80 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-iOS UIImage如何找到@2x、@3x图片" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/08/09/iOS UIImage如何找到@2x、@3x图片/" class="article-date">
+  <time datetime="2017-08-09T12:55:10.620Z" itemprop="datePublished">2017-08-09</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/iOS/">iOS</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/08/09/iOS UIImage如何找到@2x、@3x图片/">iOS UIImage如何找到@2x、@3x图片</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!-- toc -->
+<ul>
+<li><a href="#要解决的问题">要解决的问题</a></li>
+<li><a href="#干货">干货</a><ul>
+<li><a href="#命名规则">命名规则：</a></li>
+<li><a href="#系统如何加载图片">系统如何加载图片</a></li>
+<li><a href="#其他">其他</a></li>
+</ul>
+</li>
+<li><a href="#参考链接">参考链接</a></li>
+</ul>
+<!-- tocstop -->
+<h2 id="要解决的问题"><a href="#要解决的问题" class="headerlink" title="要解决的问题"></a>要解决的问题</h2><p>该篇技术贴主要解释iOS怎样加载高分辨率的图片(@2x、@3x)</p>
+<h2 id="干货"><a href="#干货" class="headerlink" title="干货"></a>干货</h2><p>目前(2017年08月09日)，iOS开发中需要提供三种分辨率的图片分辨是1、2、3倍图。</p>
+<h3 id="命名规则"><a href="#命名规则：" class="headerlink" title="命名规则："></a>命名规则：</h3><ul>
+<li>Standard: <imagename><device_modifier>.<filename_extension></filename_extension></device_modifier></imagename></li>
+<li>High resolution: <imagename>@2x/@3x<device_modifier>.<filename_extension></filename_extension></device_modifier></imagename></li>
+</ul>
+<p><code>device_modifier</code>这个是可选的，它指明了设备信息，比如<code>~ipad</code>、<code>~iphone</code>。<br>必须按照此顺序，否则系统找不到图片。</p>
+<h3 id="系统如何加载图片"><a href="#系统如何加载图片" class="headerlink" title="系统如何加载图片"></a>系统如何加载图片</h3><ol>
+<li><code>imageNamed:</code></li>
+<li><code>imageWithContentsOfFile:</code></li>
+<li><code>initWithContentsOfFile:</code></li>
+</ol>
+<p>Note：</p>
+<ul>
+<li>使用上面三个方法，系统会根据当前设备分辨率寻找合适的图片。</li>
+<li>如果相应分辨率的图片没找到，系统会找最近的低分辨率的图片。即@3x &gt; @2x &gt; @1x顺序</li>
+<li>获取的<code>UIImage</code>对象的<code>scale</code>属性会根据不同分辨率自动设置为合适的值</li>
+</ul>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>加载<code>UIImage</code>相关问题还有很多，比如使用<code>Core Graphics</code>画出的图片需要对scale做处理、<code>UIBezierPath</code>画出的线宽度在不同分辨率显示的处理等。<br>由于目前还未接触到，先不深究。详情可以参考文章最后的链接。</p>
+<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p><a href="https://developer.apple.com/library/content/documentation/2DDrawing/Conceptual/DrawingPrintingiOS/SupportingHiResScreensInViews/SupportingHiResScreensInViews.html" target="_blank" rel="external">Supporting High-Resolution Screens In Views</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://songgeb.github.io/2017/08/09/iOS UIImage如何找到@2x、@3x图片/" data-id="cj64tpjli0000k6lsh4pgijml" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/UIImage、分辨率/">UIImage、分辨率</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-iPhone屏幕分辨率汇总" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/02/17/iPhone屏幕分辨率汇总/" class="article-date">
@@ -1602,6 +1676,16 @@
 <tr>
 <td style="text-align:center">.table</td>
 <td style="text-align:center">显示所有表名</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">.schema [tablename]</td>
+<td style="text-align:center">显示表结构</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">.exit</td>
+<td style="text-align:center">退出</td>
 </tr>
 </tbody>
 </table>
@@ -1840,7 +1924,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/原创/">原创</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/思考/">思考</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/原创/">原创</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/备忘/">备忘</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/思考/">思考</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -1850,7 +1934,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Blog/">Blog</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Coud9/">Coud9</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Webdriver/">Webdriver</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-page/">github page</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iOS/">iOS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iPhone屏幕/">iPhone屏幕</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/卓老板/">卓老板</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技术英语/">技术英语</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/百度指数/">百度指数</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/科学主义/">科学主义</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/罗辑思维/">罗辑思维</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/适配移动端/">适配移动端</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Blog/">Blog</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Coud9/">Coud9</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Webdriver/">Webdriver</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Xcode/">Xcode</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-page/">github page</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iOS/">iOS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iPhone屏幕/">iPhone屏幕</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pod/">pod</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/卓老板/">卓老板</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技术英语/">技术英语</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/百度指数/">百度指数</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/科学主义/">科学主义</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/罗辑思维/">罗辑思维</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/适配移动端/">适配移动端</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -1860,7 +1944,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Blog/" style="font-size: 10px;">Blog</a> <a href="/tags/Coud9/" style="font-size: 10px;">Coud9</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Webdriver/" style="font-size: 10px;">Webdriver</a> <a href="/tags/github-page/" style="font-size: 10px;">github page</a> <a href="/tags/iOS/" style="font-size: 10px;">iOS</a> <a href="/tags/iPhone屏幕/" style="font-size: 10px;">iPhone屏幕</a> <a href="/tags/卓老板/" style="font-size: 10px;">卓老板</a> <a href="/tags/技术英语/" style="font-size: 10px;">技术英语</a> <a href="/tags/百度指数/" style="font-size: 10px;">百度指数</a> <a href="/tags/科学主义/" style="font-size: 10px;">科学主义</a> <a href="/tags/罗辑思维/" style="font-size: 10px;">罗辑思维</a> <a href="/tags/适配移动端/" style="font-size: 10px;">适配移动端</a>
+      <a href="/tags/Blog/" style="font-size: 10px;">Blog</a> <a href="/tags/Coud9/" style="font-size: 10px;">Coud9</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Webdriver/" style="font-size: 10px;">Webdriver</a> <a href="/tags/Xcode/" style="font-size: 10px;">Xcode</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/github-page/" style="font-size: 10px;">github page</a> <a href="/tags/iOS/" style="font-size: 10px;">iOS</a> <a href="/tags/iPhone屏幕/" style="font-size: 10px;">iPhone屏幕</a> <a href="/tags/pod/" style="font-size: 10px;">pod</a> <a href="/tags/卓老板/" style="font-size: 10px;">卓老板</a> <a href="/tags/技术英语/" style="font-size: 10px;">技术英语</a> <a href="/tags/百度指数/" style="font-size: 10px;">百度指数</a> <a href="/tags/科学主义/" style="font-size: 10px;">科学主义</a> <a href="/tags/罗辑思维/" style="font-size: 10px;">罗辑思维</a> <a href="/tags/适配移动端/" style="font-size: 10px;">适配移动端</a>
     </div>
   </div>
 
@@ -1869,7 +1953,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a><span class="archive-list-count">4</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a><span class="archive-list-count">5</span></li></ul>
     </div>
   </div>
 
