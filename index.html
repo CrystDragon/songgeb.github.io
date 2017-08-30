@@ -103,6 +103,18 @@
 <td style="text-align:center">博客添加评论/留言插件</td>
 <td style="text-align:center">待定</td>
 </tr>
+<tr>
+<td style="text-align:center">哪些情况必须要用@synthsize</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">@proterty只是生命了get/set方法，只有synthesize之后才产生真正的成员变量，而且这个成员变量对子类是不可见的，为什么呢？</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">使用git patch完成跨git应用补丁</td>
+<td style="text-align:center"></td>
+</tr>
 </tbody>
 </table>
 
@@ -223,6 +235,8 @@
       
         <!-- toc -->
 <ul>
+<li><a href="#打包ipa的另一种方法">打包ipa的另一种方法</a></li>
+<li><a href="#protocol中使用property">protocol中使用property</a></li>
 <li><a href="#charles证书配置">charles证书配置</a></li>
 <li><a href="#iphone屏幕尺寸">iPhone屏幕尺寸</a></li>
 <li><a href="#架构与机型">架构与机型</a></li>
@@ -236,8 +250,21 @@
 <li><a href="#xcode大片代码变白色代码提示不work咋办">Xcode大片代码变白色，代码提示不work咋办</a></li>
 <li><a href="#nsbundle-mainbundle具体路径">[NSBundle mainBundle]具体路径</a></li>
 <li><a href="#nsdate使用注意事项">NSDate使用注意事项</a></li>
+<li><a href="#xcode快速插入自定义代码块">XCode快速插入自定义代码块</a></li>
+<li><a href="#nsdictionary技巧">NSDictionary技巧</a></li>
+<li><a href="#nstimer的timeinterval属性">NSTimer的timeInterval属性</a></li>
 </ul>
 <!-- tocstop -->
+<h3 id="打包ipa的另一种方法"><a href="#打包ipa的另一种方法" class="headerlink" title="打包ipa的另一种方法"></a>打包ipa的另一种方法</h3><p>由于最近公司的苹果证书被锁定，再加上Xcode中登录的apple id会话过，这就导致在用自己机器打包(archive)的时候，最后选择打包方式的时候（如图），选择任何一种方式导出时，都会提醒账户已锁定无法导出。</p>
+<p><img src="/images/123.png" alt=""></p>
+<p>另一种导出ipa的方法是：</p>
+<ol>
+<li>使用正确的证书（开发者证书、企业发布证书都可以）执行<code>build</code></li>
+<li>打开<code>iTunes</code> -&gt; <code>应用</code>选项，将<code>build</code>出的<code>.app</code>文件拖拽到<code>iTunes</code>中</li>
+<li>在<code>iTunes</code>中选择刚才拖过去的app，右键 -&gt; 在finder中显示，就找到最终的<code>ipa</code>文件了</li>
+</ol>
+<p>亲测，对于企业发布证书和开发者证书打的包都适用。</p>
+<h3 id="protocol中使用property"><a href="#protocol中使用property" class="headerlink" title="protocol中使用property"></a>protocol中使用property</h3><p>待补充</p>
 <h3 id="charles证书配置"><a href="#charles证书配置" class="headerlink" title="charles证书配置"></a>charles证书配置</h3><p>手机safari输入<a href="http://charlesproxy.com/getssl" target="_blank" rel="external">charles证书地址</a></p>
 <p>Note: iOS 10.3的新坑，进入设置-&gt;通用-&gt;关于手机-&gt;证书信任设置，里面有对chales证书的设置，10.3之前，当上面的证书安装后，这里会自动选为信任；10.3之后，默认则是关闭的，所以还在开启一下这里。</p>
 <h3 id="iphone屏幕尺寸"><a href="#iPhone屏幕尺寸" class="headerlink" title="iPhone屏幕尺寸"></a>iPhone屏幕尺寸</h3><table>
@@ -410,10 +437,13 @@
 </ol>
 <h3 id="autolayout中各种疑难杂症"><a href="#autolayout中各种疑难杂症" class="headerlink" title="autolayout中各种疑难杂症"></a>autolayout中各种疑难杂症</h3><p><a href="http://zhangbuhuai.com/beginning-auto-layout-part-1/" target="_blank" rel="external">autolayout疑难杂症</a></p>
 <h3 id="xcode大片代码变白色代码提示不work咋办"><a href="#Xcode大片代码变白色，代码提示不work咋办" class="headerlink" title="Xcode大片代码变白色，代码提示不work咋办"></a>Xcode大片代码变白色，代码提示不work咋办</h3><ol>
-<li>到这个<code>/Users/xxx/Library/Developer/Xcode/</code>路径下，删除相应工程的文件夹，即删除索引文件，重启Xcode即可</li>
+<li>到这个<code>/Users/xxx/Library/Developer/Xcode/DerivedData/</code>路径下，删除相应工程的文件夹，即删除索引文件，重启Xcode即可</li>
 </ol>
 <h3 id="nsbundle-mainbundle具体路径"><a href="#NSBundle-mainBundle-具体路径" class="headerlink" title="[NSBundle mainBundle]具体路径"></a>[NSBundle mainBundle]具体路径</h3><p>mainBundle具体路径是指，编译结束后最终生成的<code>xxx.app</code>里面的内容，Finder中，右击<code>xxx.app</code> -&gt; 显示包内容，看到的内容就是该路径</p>
 <h3 id="nsdate使用注意事项"><a href="#NSDate使用注意事项" class="headerlink" title="NSDate使用注意事项"></a>NSDate使用注意事项</h3><p>待补充</p>
+<h3 id="xcode快速插入自定义代码块"><a href="#XCode快速插入自定义代码块" class="headerlink" title="XCode快速插入自定义代码块"></a>XCode快速插入自定义代码块</h3><p><a href="http://www.cnblogs.com/chebaodaren/p/4565772.html" target="_blank" rel="external">插入自定义代码</a></p>
+<h3 id="nsdictionary技巧"><a href="#NSDictionary技巧" class="headerlink" title="NSDictionary技巧"></a>NSDictionary技巧</h3><p>params[@”xxx”] = nil; // remove掉xxx这组key,value</p>
+<h3 id="nstimer的timeinterval属性"><a href="#NSTimer的timeInterval属性" class="headerlink" title="NSTimer的timeInterval属性"></a>NSTimer的timeInterval属性</h3><p>如果repeat是NO，timeInterval始终是0</p>
 
       
     </div>
