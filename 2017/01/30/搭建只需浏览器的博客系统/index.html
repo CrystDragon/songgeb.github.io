@@ -102,7 +102,6 @@
 <meta property="og:url" content="http://songgeb.github.io/2017/01/30/搭建只需浏览器的博客系统/index.html">
 <meta property="og:site_name" content="Songgeb">
 <meta property="og:description" content="持续更新 背景 初步方案 最终方案 参考链接   持续更新目前hexo editor已经转移到搬瓦工上买的一个vps空间里了 2017-02-11 17:53:39加入文章源文件自动备份功能 背景之前在CSDN、作业部落、简书都写过文章，主要用作技术备忘和分享。现在想自己搭建一个博客，主要解决以下几个需求：  支持markdown语法（大部分第三方博客系统都支持） 移动端也可以轻松写文章（简书">
-<meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2017-05-21T10:41:11.574Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="搭建只用浏览器就可以写作的博客系统">
@@ -476,7 +475,7 @@
           
   <div class="comments" id="comments">
     
-      <div id="uyan_frame"></div>
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zMDU5Ny83MTUy"></div>
     
   </div>
 
@@ -734,19 +733,22 @@
 
 
   
-    
 
-    
-      <!-- UY BEGIN -->
-      <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2142945"></script>
-      <!-- UY END -->
-    
+
+
+
+
   
-
-
-
-
-
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
   
 
 
