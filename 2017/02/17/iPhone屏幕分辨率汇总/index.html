@@ -102,6 +102,7 @@
 <meta property="og:url" content="http://songgeb.github.io/2017/02/17/iPhone屏幕分辨率汇总/index.html">
 <meta property="og:site_name" content="Songgeb">
 <meta property="og:description" content="provision文件路径 双击provision文件后，相关文件会在~/Library/MobileDevice/Provisioning Profiles 如何通过Xcode设置的可读的provision名找到具体的provision文件？provision文件中记录了UUID和name，到本地路径下遍历所有provision文件找到对应name的provision文件就可以了。具体可以参考脚">
+<meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://songgeb.github.io/images/123.png">
 <meta property="og:image" content="http://songgeb.github.io/images/jsontoobj.png">
 <meta property="og:updated_time" content="2017-09-04T10:51:10.783Z">
@@ -473,7 +474,7 @@
 </tr>
 </tbody>
 </table>
-<p>测试代码基于<code>XCode 8.3.2</code> + <code>iOS 10</code><br><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">NSString</span> *jsonStr = <span class="string">@"&#123; \</span></div><div class="line">                           \"stringkey\" : \"string\", \</div><div class="line">                           \"numberkey\" : 1, \</div><div class="line">                           \"arraykey\"  : [\"a\"], \</div><div class="line">                           \"boolkey\"   : true, \</div><div class="line">                           \"objectkey\" : &#123;\"key\":2&#125;, \</div><div class="line">                           \"nullkey\"   : null \</div><div class="line">                        &#125;";</div><div class="line"><span class="built_in">NSData</span> *jsonData = [jsonStr dataUsingEncoding:<span class="built_in">NSUTF8StringEncoding</span>];</div><div class="line"><span class="built_in">NSError</span> *error = <span class="literal">nil</span>;</div><div class="line"><span class="keyword">id</span> object = [<span class="built_in">NSJSONSerialization</span> JSONObjectWithData:jsonData</div><div class="line">                                    options:<span class="built_in">NSJSONReadingAllowFragments</span></div><div class="line">                                      error:&amp;error];</div><div class="line"><span class="built_in">NSLog</span>(<span class="string">@"parsed object : %@"</span>, object);</div><div class="line"><span class="built_in">NSLog</span>(<span class="string">@"bool type in json equals NSNumber in Objc ? : %d"</span>, [object[<span class="string">@"boolkey"</span>] isKindOfClass:[<span class="built_in">NSNumber</span> <span class="keyword">class</span>]]);</div></pre></td></tr></table></figure></p>
+<p>测试代码基于<code>XCode 8.3.2</code> + <code>iOS 10</code><br><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">NSString</span> *jsonStr = <span class="string">@"&#123; \</span></div><div class="line"><span class="string">                           \"stringkey\" : \"string\", \</span></div><div class="line"><span class="string">                           \"numberkey\" : 1, \</span></div><div class="line"><span class="string">                           \"arraykey\"  : [\"a\"], \</span></div><div class="line"><span class="string">                           \"boolkey\"   : true, \</span></div><div class="line"><span class="string">                           \"objectkey\" : &#123;\"key\":2&#125;, \</span></div><div class="line"><span class="string">                           \"nullkey\"   : null \</span></div><div class="line"><span class="string">                        &#125;"</span>;</div><div class="line"><span class="built_in">NSData</span> *jsonData = [jsonStr dataUsingEncoding:<span class="built_in">NSUTF8StringEncoding</span>];</div><div class="line"><span class="built_in">NSError</span> *error = <span class="literal">nil</span>;</div><div class="line"><span class="keyword">id</span> object = [<span class="built_in">NSJSONSerialization</span> JSONObjectWithData:jsonData</div><div class="line">                                    options:<span class="built_in">NSJSONReadingAllowFragments</span></div><div class="line">                                      error:&amp;error];</div><div class="line"><span class="built_in">NSLog</span>(<span class="string">@"parsed object : %@"</span>, object);</div><div class="line"><span class="built_in">NSLog</span>(<span class="string">@"bool type in json equals NSNumber in Objc ? : %d"</span>, [object[<span class="string">@"boolkey"</span>] isKindOfClass:[<span class="built_in">NSNumber</span> <span class="keyword">class</span>]]);</div></pre></td></tr></table></figure></p>
 <p>结果</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">parsed object : &#123;</div><div class="line">    arraykey =     (</div><div class="line">        a</div><div class="line">    );</div><div class="line">    boolkey = 1;</div><div class="line">    nullkey = &quot;&lt;null&gt;&quot;;</div><div class="line">    numberkey = 1;</div><div class="line">    objectkey =     &#123;</div><div class="line">        key = 2;</div><div class="line">    &#125;;</div><div class="line">    stringkey = string;</div><div class="line">&#125;</div><div class="line">bool type in json equals NSNumber in Objc ? : 1</div></pre></td></tr></table></figure>
 <p>json转为Objc对象的实际类型可能是上面列表中列出的类的子类，通过断点可以看出：</p>
@@ -682,7 +683,7 @@
             
               <a href="/archives">
             
-                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-count">11</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -693,7 +694,7 @@
             
             <div class="site-state-item site-state-categories">
               
-                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-count">10</span>
                 <span class="site-state-item-name">分类</span>
               
             </div>
@@ -704,7 +705,7 @@
             
             <div class="site-state-item site-state-tags">
               
-                <span class="site-state-item-count">25</span>
+                <span class="site-state-item-count">24</span>
                 <span class="site-state-item-name">标签</span>
               
             </div>
