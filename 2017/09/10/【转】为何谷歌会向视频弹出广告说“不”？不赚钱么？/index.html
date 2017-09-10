@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="谷歌," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="[本文转自网易新闻] 听到谷歌，大多数人首先会想到Android操作系统、谷歌搜索、无人车这些业务，不可否认谷歌作为全世界最大的互联网公司，拥有着大把大把的“黑科技”。不过，我们今天要说的却并非是这些“高大上”的东西，而是谷歌还在国内正常运营的业务之一——在线广告（Google AdSense）。  是的，你没有看错——谷歌在线广告业务在国内目前依然正常运营，它不仅面向国内消费者，更重要的是为很多">
+<meta name="keywords" content="谷歌">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【转】为何谷歌会向视频弹出广告说“不”？不赚钱么？">
+<meta property="og:url" content="http://songgeb.github.io/2017/09/10/【转】为何谷歌会向视频弹出广告说“不”？不赚钱么？/index.html">
+<meta property="og:site_name" content="Songgeb">
+<meta property="og:description" content="[本文转自网易新闻] 听到谷歌，大多数人首先会想到Android操作系统、谷歌搜索、无人车这些业务，不可否认谷歌作为全世界最大的互联网公司，拥有着大把大把的“黑科技”。不过，我们今天要说的却并非是这些“高大上”的东西，而是谷歌还在国内正常运营的业务之一——在线广告（Google AdSense）。  是的，你没有看错——谷歌在线广告业务在国内目前依然正常运营，它不仅面向国内消费者，更重要的是为很多">
+<meta property="og:image" content="http://songgeb.github.io/images/0717bed122684dba670547e4675fcfb0.jpg">
+<meta property="og:image" content="http://songgeb.github.io/images/f9fce7f27e3bf412ddf7b1a345aed983.jpg">
+<meta property="og:image" content="http://songgeb.github.io/images/28d06e9af136b7a223b73145fbf4dc02.jpg">
+<meta property="og:image" content="http://songgeb.github.io/images/76477783df968aff624f4fa593948175.jpg">
+<meta property="og:image" content="http://songgeb.github.io/images/d032376781b218281b0ddb024b83d229.jpg">
+<meta property="og:image" content="http://songgeb.github.io/images/c8968ac0bba921839e7135e99dd67c8d.jpg">
+<meta property="og:image" content="http://songgeb.github.io/images/538b208b87a3033ab024d13981a879c8.jpg">
+<meta property="og:image" content="http://songgeb.github.io/images/e6998f199c3efae964ff62c7384ea0be.jpg">
+<meta property="og:image" content="http://songgeb.github.io/images/cbd7f3c63f162210538c4022f30e0d57.jpg">
+<meta property="og:image" content="http://songgeb.github.io/images/66284c396e097692d2e39caf9700b3de.jpg">
+<meta property="og:image" content="http://songgeb.github.io/images/f151f58a293aa8e2ea41352bbf9b6d61.jpg">
+<meta property="og:image" content="http://songgeb.github.io/images/e60dfb80edfadb2a363990c0d8edf7a2.jpg">
+<meta property="og:updated_time" content="2017-09-10T07:37:02.004Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="【转】为何谷歌会向视频弹出广告说“不”？不赚钱么？">
+<meta name="twitter:description" content="[本文转自网易新闻] 听到谷歌，大多数人首先会想到Android操作系统、谷歌搜索、无人车这些业务，不可否认谷歌作为全世界最大的互联网公司，拥有着大把大把的“黑科技”。不过，我们今天要说的却并非是这些“高大上”的东西，而是谷歌还在国内正常运营的业务之一——在线广告（Google AdSense）。  是的，你没有看错——谷歌在线广告业务在国内目前依然正常运营，它不仅面向国内消费者，更重要的是为很多">
+<meta name="twitter:image" content="http://songgeb.github.io/images/0717bed122684dba670547e4675fcfb0.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://songgeb.github.io/2017/09/10/【转】为何谷歌会向视频弹出广告说“不”？不赚钱么？/"/>
+
+
+
+
+
+  <title>【转】为何谷歌会向视频弹出广告说“不”？不赚钱么？ | Songgeb</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Songgeb</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://songgeb.github.io/2017/09/10/【转】为何谷歌会向视频弹出广告说“不”？不赚钱么？/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="songgeb">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Songgeb">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">【转】为何谷歌会向视频弹出广告说“不”？不赚钱么？</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-10T15:16:49-04:00">
+                2017-09-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/转载/" itemprop="url" rel="index">
+                    <span itemprop="name">转载</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2017/09/10/【转】为何谷歌会向视频弹出广告说“不”？不赚钱么？/" class="leancloud_visitors" data-flag-title="【转】为何谷歌会向视频弹出广告说“不”？不赚钱么？">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>[本文转自<a href="https://c.m.163.com/news/a/CPIKOUOU0511BE1V.html?spss=newsapp&amp;spsw=1&amp;from=timeline" target="_blank" rel="external">网易新闻</a>]</p>
+<p>听到谷歌，大多数人首先会想到Android操作系统、谷歌搜索、无人车这些业务，不可否认谷歌作为全世界最大的互联网公司，拥有着大把大把的“黑科技”。不过，我们今天要说的却并非是这些“高大上”的东西，而是谷歌还在国内正常运营的业务之一——在线广告（Google AdSense）。</p>
+<p><img src="/images/0717bed122684dba670547e4675fcfb0.jpg" alt=""></p>
+<p>是的，你没有看错——谷歌在线广告业务在国内目前依然正常运营，它不仅面向国内消费者，更重要的是为很多国内企业的海外业务提供在线广告服务。但是——就是这样的谷歌，最近却更新了旗下的“广告展示位置合作规范（下文简称规范）”，禁止了一大票他们觉得不合适的广告发布方式。引人注意的是，在国内大行其道却也饱受诟病的弹出式广告和视频前插入广告也在谷歌的“禁止”之列——难道谷歌不赚钱了？这是要“自废武功”么？让我们来看看是怎么回事。</p>
+<p><img src="/images/f9fce7f27e3bf412ddf7b1a345aed983.jpg" alt=""></p>
+<p>在谷歌官网，笔者很容易地就找到了这份《规范》，里面洋洋洒洒地列出了各种针对广告发布商的“禁止事项”，有的还贴心地配上了“错误示例”，比如这样的：</p>
+<p><img src="/images/28d06e9af136b7a223b73145fbf4dc02.jpg" alt=""></p>
+<p>还有这样的：</p>
+<p><img src="/images/76477783df968aff624f4fa593948175.jpg" alt=""></p>
+<p>下面这些全部都是禁止事项：</p>
+<p><img src="/images/d032376781b218281b0ddb024b83d229.jpg" alt=""></p>
+<p>有意思的是，其中的许多广告类型其实在我们的日常浏览中都经常见到：比如说将图片和广告并排放置的手法就常见于一些图片搜索引擎，而视频、游戏、下载内容之前的“前贴片广告”更是已经在国内互联网上成为了一种文化……</p>
+<p>当然，这次谷歌禁止最严厉的，还是大家都深恶痛绝的弹出式广告。在新版《规范》中，谷歌声明：“发布商不得将Google广告投放到不是由有意的用户互动（例如点击）打开的任何窗口中。此外，我们不允许将Google广告投放到缺少“后退”、“前进”浏览按钮以及可修改的网址字段等导航控件的网络浏览器窗口中。”</p>
+<p><img src="/images/c8968ac0bba921839e7135e99dd67c8d.jpg" alt=""></p>
+<p>不仅如此，如果网站主使用了其他广告商的弹出式广告，那么谷歌也将会拒绝与该网站合作：“发布商不得在包含三个以上弹出式窗口的网站上投放Google广告。网站上显示的弹出式窗口不得干扰网站浏览、更改用户偏好设置、启动文件下载或散播病毒。发布商不得在包含或触发背后弹出式窗口的网站上投放Google广告。”</p>
+<p>很厉害有没有！？试想一下，如果谷歌在国内的在线广告市场占据垄断地位，那么禁止弹出广告、禁止前贴片广告、禁止电子邮件和动态内容广告、禁止应用内广告……如此一来，几乎可以“灭绝”大多数在线广告，想想都让人有点激动呢！</p>
+<p><img src="/images/538b208b87a3033ab024d13981a879c8.jpg" alt=""></p>
+<p>咳咳……当然，现实是残酷的，谷歌在国内虽然仍保留了广告业务，但其市场占有率实在算不上大，主要的广告客户也多为跨境商业公司——即海外企业在国内的广告、或国内企业到外国网站打广告。本身的受众覆盖就很小，因此即使《规范》一出，对于我们平日里的上网浏览体验大概也是杯水车薪。<br>但是，这就引出了另一个问题：对于谷歌来说，是什么理由促使它去“自废武功”，对自身的广告业务作出种种苛刻的限制，甚至不惜和广告主、网站主闹翻脸呢？</p>
+<p><img src="/images/e6998f199c3efae964ff62c7384ea0be.jpg" alt=""></p>
+<p>很简单，因为谷歌在作为一个全球成功的互联网广告公司（虽然在中国不够成功）之前，首先是一家互联网科技公司，是互联网技术标准的制定者和推动者之一。对于谷歌来说，维护“互联网”本身的良好形象，让网民们上网速度更快，浏览页面时感觉更舒适，远比靠一堆广告赚钱要更加重要。毕竟——如果一位网络用户因为广告页面而感到不堪其扰，他的正常反应有二：一是使用“去广告软件”，这将会不分青红皂白地伤害所有的广告公司和网站的利益；二是对互联网产生厌烦心理，进而减少或者拒绝使用网络——这同样有违谷歌推进全球互联网普及的宗旨。综上所述，在推进互联网技术进步，引导各网站良性发展的大原则面前，广告业务的钱什么的，少赚一点谷歌也觉得无所谓了。</p>
+<p><img src="/images/cbd7f3c63f162210538c4022f30e0d57.jpg" alt=""></p>
+<p>当然，因为谷歌目前在国内的尴尬地位，纵使谷歌的广告部门如此“刁难”广告主，实际上也很难真的让你我平时常用的网站上面的广告少那么一两个。反倒是广告代理商和相关网站很可能因为广告收入/效果打折扣，从而放弃Google AdSense，转投其他的国产网页广告方案——结果也许反倒使得弹出广告、（视频）前贴片广告等更加猖獗，谷歌的一片好心最后适得其反。</p>
+<p>但是，回顾历史，我们不难发现，谷歌的这种看似“白费力气”的行为，最终往往确实能达到改变全行业、造福使用者（哪怕不是自家用户）的目的。</p>
+<p>2010年，美国家庭的互联网用户们普遍忍受着运营商高价低质的盘剥。当时，谷歌想要进行一些关于未来互联网应用的实验，以验证超高速互联网能否使远程医疗和在线教育变成现实。但是，美国那时候没有一家电信运营商能够提供足够高带宽的家用宽带服务。见此情景，谷歌决定“自己建宽带”。</p>
+<p><img src="/images/66284c396e097692d2e39caf9700b3de.jpg" alt=""></p>
+<p>之后，就是大家熟悉的Google Fiber（谷歌光纤）服务横空出世——每户高达1000Mbps的上传/下载速度不仅让用户惊喜不已，也给了传统运营商极大的竞争压力。结果——当谷歌在2016年底，流露出因为成本太高，准备放弃Google Fiber的意图时，美国已经有了好几家光纤网络提供商与之竞争。普通美国家庭的上网带宽比过去提高了几十倍，价格也降低了——谷歌实现了他们“普及宽带”的愿景，远程医疗和在线教育也得以顺利铺开……</p>
+<p>类似的情况还有自从斯诺登事件之后，谷歌和Mozilla等互联网技术先锋就一直在推链接(原文此处的链接无法使用，此处应想表达https安全链接)</p>
+<p><img src="/images/f151f58a293aa8e2ea41352bbf9b6d61.jpg" alt=""></p>
+<p>当时，大家虽然震惊于斯诺登和NSA之间的种种是是非非，但对于如何加强互联网安全性并没有明确的认知。一些商业项目趁机大赚特赚，而谷歌提出的将所有网站推行加密链接的方案因为并不会带来商业好处，反倒应者寥寥。</p>
+<p>不过，几年过去，虽然我们几乎没有看到任何关于呼吁网站加密的倡议活动或是行业会议，但现在只要你打开一个稍有分量的网站，就会发现它必然使用链接。</p>
+<p><img src="/images/e60dfb80edfadb2a363990c0d8edf7a2.jpg" alt=""></p>
+<p>从这些事例，不难明白谷歌和其他互联网公司的最大不同——其他的公司只是把互联网作为赚钱的工具，而谷歌经营的，却是互联网本身。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>作者不喝咖啡，请他吃头蒜吧~</div>
+  <div id="QR">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechat.jpg" alt="songgeb 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="songgeb 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/谷歌/" rel="tag"># 谷歌</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/09/01/几种博客评论系统比较/" rel="next" title="几种博客评论系统比较">
+                <i class="fa fa-chevron-left"></i> 几种博客评论系统比较
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zMDU5Ny83MTUy"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          
+            <p class="site-author-name" itemprop="name">songgeb</p>
+            <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+            
+              <a href="/archives">
+            
+                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">26</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">songgeb</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.2</div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("Q2xzKMDGGsdB9JRmhfItk0Hy-gzGzoHsz", "VM2oy7SziQouXbTNb8TWjlCX");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
