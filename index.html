@@ -671,7 +671,7 @@
 
 
 
-dispatch_once_t中onceToken是？
+arc4random()的用法
 
 
 
@@ -687,7 +687,7 @@ NSDate使用注意事项
 
 
 
-@proterty只是生命了get/set
+@proterty只是生命了get/set方法，只有synthes
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1008,10 +1008,10 @@ Standard: &lt;ImageName&gt;&
       
         
           
-          重签名工具当前（2017年09月10日）测试可用的重签名工具。地址
-provision文件路径
-双击provision文件后，相关文件会在~/Library/MobileDevice/Provisioning Profiles
-如何通过Xcode设置的可读的provision名找到具体的provis
+          关于dispatch_once中onceTokendispatch_once_t 的定义是1typedef long dispatch_once_t;
+
+创建单例时，系统根据该值判断block中代码是否已执行。所以，要求该值不能动态产生。生命周期要是整个app。所以通常是static的。
+GCD这种
           ...
           <!--noindex-->
           <div class="post-button text-center">
