@@ -1547,10 +1547,15 @@ Standard: &lt;ImageName&gt;&
       
         
           
-          arc4randomarc4random % 100 == [0, 100)
-关于dispatch_once中onceTokendispatch_once_t 的定义是1typedef long dispatch_once_t;
+          iPhone播放器某些视频不能播放代码中使用了AVPlayer，有些视频在iPhone 5上不能播放。
+解决思路基本解决思路就是：
 
-创建单例时，系统根据该值判断block中代码是否已执行。所以，要求该
+查看官方支持的音视频格式
+查看视频的本身的各项参数是否符合1中的要求
+
+官方支持格式查了下iPhone 5的官方文档：
+
+支持的视频格式：H.264 视频，高达 10
           ...
           <!--noindex-->
           <div class="post-button text-center">

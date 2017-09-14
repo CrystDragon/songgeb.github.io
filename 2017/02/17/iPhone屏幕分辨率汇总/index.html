@@ -95,19 +95,19 @@
 
 
 
-<meta name="description" content="arc4randomarc4random % 100 == [0, 100) 关于dispatch_once中onceTokendispatch_once_t 的定义是1typedef long dispatch_once_t;  创建单例时，系统根据该值判断block中代码是否已执行。所以，要求该值不能动态产生。生命周期要是整个app。所以通常是static的。 GCD这种单例写法相比@sync">
+<meta name="description" content="iPhone播放器某些视频不能播放代码中使用了AVPlayer，有些视频在iPhone 5上不能播放。 解决思路基本解决思路就是：  查看官方支持的音视频格式 查看视频的本身的各项参数是否符合1中的要求  官方支持格式查了下iPhone 5的官方文档：  支持的视频格式：H.264 视频，高达 1080p，每秒 30 帧，High Profile level 4.1 和 AAC-LC 音频，高达">
 <meta name="keywords" content="iPhone屏幕">
 <meta property="og:type" content="article">
 <meta property="og:title" content="iOS琐碎知识整理">
 <meta property="og:url" content="http://songgeb.github.io/2017/02/17/iPhone屏幕分辨率汇总/index.html">
 <meta property="og:site_name" content="Songgeb">
-<meta property="og:description" content="arc4randomarc4random % 100 == [0, 100) 关于dispatch_once中onceTokendispatch_once_t 的定义是1typedef long dispatch_once_t;  创建单例时，系统根据该值判断block中代码是否已执行。所以，要求该值不能动态产生。生命周期要是整个app。所以通常是static的。 GCD这种单例写法相比@sync">
+<meta property="og:description" content="iPhone播放器某些视频不能播放代码中使用了AVPlayer，有些视频在iPhone 5上不能播放。 解决思路基本解决思路就是：  查看官方支持的音视频格式 查看视频的本身的各项参数是否符合1中的要求  官方支持格式查了下iPhone 5的官方文档：  支持的视频格式：H.264 视频，高达 1080p，每秒 30 帧，High Profile level 4.1 和 AAC-LC 音频，高达">
 <meta property="og:image" content="http://songgeb.github.io/images/123.png">
 <meta property="og:image" content="http://songgeb.github.io/images/jsontoobj.png">
-<meta property="og:updated_time" content="2017-09-11T07:04:32.264Z">
+<meta property="og:updated_time" content="2017-09-14T06:54:37.255Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS琐碎知识整理">
-<meta name="twitter:description" content="arc4randomarc4random % 100 == [0, 100) 关于dispatch_once中onceTokendispatch_once_t 的定义是1typedef long dispatch_once_t;  创建单例时，系统根据该值判断block中代码是否已执行。所以，要求该值不能动态产生。生命周期要是整个app。所以通常是static的。 GCD这种单例写法相比@sync">
+<meta name="twitter:description" content="iPhone播放器某些视频不能播放代码中使用了AVPlayer，有些视频在iPhone 5上不能播放。 解决思路基本解决思路就是：  查看官方支持的音视频格式 查看视频的本身的各项参数是否符合1中的要求  官方支持格式查了下iPhone 5的官方文档：  支持的视频格式：H.264 视频，高达 1080p，每秒 30 帧，High Profile level 4.1 和 AAC-LC 音频，高达">
 <meta name="twitter:image" content="http://songgeb.github.io/images/123.png">
 
 
@@ -341,7 +341,34 @@
       
 
       
-        <h3><span id="arc4random">arc4random</span></h3><p><code>arc4random % 100</code> == [0, 100)</p>
+        <h3><span id="iphone播放器某些视频不能播放">iPhone播放器某些视频不能播放</span></h3><p>代码中使用了<code>AVPlayer</code>，有些视频在<strong>iPhone 5</strong>上不能播放。</p>
+<h4><span id="解决思路">解决思路</span></h4><p>基本解决思路就是：</p>
+<ol>
+<li>查看官方支持的音视频格式</li>
+<li>查看视频的本身的各项参数是否符合1中的要求</li>
+</ol>
+<h4><span id="官方支持格式">官方支持格式</span></h4><p>查了下iPhone 5的<a href="https://support.apple.com/kb/SP655?locale=zh_CN&amp;viewlocale=zh_CN" target="_blank" rel="external">官方文档</a>：</p>
+<blockquote>
+<p>支持的视频格式：H.264 视频，高达 1080p，每秒 30 帧，High Profile level 4.1 和 AAC-LC 音频，高达 160 Kbps，48kHz，立体声音频，文件格式为 .m4v、.mp4 和 .mov；MPEG-4 视频，高达 2.5 Mbps，640 x 480 像素，每秒 30 帧，Simple Profile 和 AAC-LC 音频，每声道高达 160 Kbps，48kHz，立体声音频，文件格式为 .m4v, .mp4 和 .mov；Motion JPEG (M-JPEG)，高达 35 Mbps，1280 x 720 像素，每秒 30 帧，ulaw 音频和 PCM 立体声音频，文件格式为 .avi</p>
+</blockquote>
+<p>另外也找到了开发者文档中对于<a href="https://developer.apple.com/library/content/documentation/Miscellaneous/Conceptual/iPhoneOSTechOverview/MediaLayer/MediaLayer.html" target="_blank" rel="external">iOS系统支持的视频格式标准</a>：</p>
+<blockquote>
+<ul>
+<li>H.264 video, up to 1.5 Mbps, 640 by 480 pixels, 30 frames per second, Low-Complexity version of the H.264 Baseline Profile with AAC-LC audio up to 160 Kbps, 48 kHz, stereo audio in .m4v, .mp4, and .mov file formats</li>
+<li>H.264 video, up to 768 Kbps, 320 by 240 pixels, 30 frames per second, Baseline Profile up to Level 1.3 with AAC-LC audio up to 160 Kbps, 48 kHz, stereo audio in .m4v, .mp4, and .mov file formats</li>
+<li>MPEG-4 video, up to 2.5 Mbps, 640 by 480 pixels, 30 frames per second, Simple Profile with AAC-LC audio up to 160 Kbps, 48 kHz, stereo audio in .m4v, .mp4, and .mov firous audio formats, including the ones listed in [Audio Technonnn <a href="https://developer.apple.com/library/content/documentation/Miscellaneous/Conceptual/iPhoneOSTechOverview/MediaLayer/MediaLayer.html#//apple_ref/doc/uid/TP40007898-CH9-SW2" target="_blank" rel="external">Audio Technologies</a></li>
+</ul>
+</blockquote>
+<p>再说一下如何查具体某款机型支持的视频音频格式</p>
+<ol>
+<li>进入<a href="https://support.apple.com/zh-cn" target="_blank" rel="external">苹果官方支持页面</a></li>
+<li>搜索项查询的机器，选择搜索结果中的iPhone ?技术规格就可以了</li>
+</ol>
+<h4><span id="查询视频本身的各项参数mac-环境">查询视频本身的各项参数(mac 环境)</span></h4><ol>
+<li>使用<code>ffmpeg</code>命令行工具，<code>ffmpeg -i video.mp4</code>。该工具可通过<code>brew install ffmpeg</code>安装</li>
+<li>有时可能需要修改视频分辨率，推荐一个免费mac工具–<a href="https://github.com/songgeb/GoodsInPrograming" target="_blank" rel="external">MPEG_Streamclip</a></li>
+</ol>
+<h3><span id="arc4random">arc4random</span></h3><p><code>arc4random % 100</code> == [0, 100)</p>
 <h3><span id="关于dispatch_once中oncetoken">关于dispatch_once中onceToken</span></h3><p>dispatch_once_t 的定义是<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">typedef long dispatch_once_t;</div></pre></td></tr></table></figure></p>
 <ol>
 <li>创建单例时，系统根据该值判断block中代码是否已执行。所以，要求该值不能动态产生。生命周期要是整个app。所以通常是static的。</li>
@@ -747,7 +774,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">arc4random</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">关于dispatch_once中onceToken</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">3.</span> <span class="nav-text">重签名工具</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">4.</span> <span class="nav-text">provision文件路径</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">5.</span> <span class="nav-text">Mac Finder的webp插件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">6.</span> <span class="nav-text">打包ipa的另一种方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">7.</span> <span class="nav-text">protocol中使用property</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">8.</span> <span class="nav-text">charles证书配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">9.</span> <span class="nav-text">iPhone屏幕尺寸</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">10.</span> <span class="nav-text">架构与机型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">11.</span> <span class="nav-text">正则表达式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">12.</span> <span class="nav-text">iOS中处理json时注意事项</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">13.</span> <span class="nav-text">如何隐藏status bar</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">13.1.</span> <span class="nav-text">一个开关，两种途径隐藏状态栏</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">14.</span> <span class="nav-text">autolayout中各种疑难杂症</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">15.</span> <span class="nav-text">Xcode大片代码变白色，代码提示不work咋办</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">16.</span> <span class="nav-text">[NSBundle mainBundle]具体路径</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">17.</span> <span class="nav-text">NSDate使用注意事项</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">18.</span> <span class="nav-text">XCode快速插入自定义代码块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">19.</span> <span class="nav-text">NSDictionary技巧</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">20.</span> <span class="nav-text">NSTimer的timeInterval属性</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">iPhone播放器某些视频不能播放</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.1.</span> <span class="nav-text">解决思路</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.2.</span> <span class="nav-text">官方支持格式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.3.</span> <span class="nav-text">查询视频本身的各项参数(mac 环境)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">arc4random</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">3.</span> <span class="nav-text">关于dispatch_once中onceToken</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">4.</span> <span class="nav-text">重签名工具</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">5.</span> <span class="nav-text">provision文件路径</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">6.</span> <span class="nav-text">Mac Finder的webp插件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">7.</span> <span class="nav-text">打包ipa的另一种方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">8.</span> <span class="nav-text">protocol中使用property</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">9.</span> <span class="nav-text">charles证书配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">10.</span> <span class="nav-text">iPhone屏幕尺寸</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">11.</span> <span class="nav-text">架构与机型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">12.</span> <span class="nav-text">正则表达式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">13.</span> <span class="nav-text">iOS中处理json时注意事项</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">14.</span> <span class="nav-text">如何隐藏status bar</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">14.1.</span> <span class="nav-text">一个开关，两种途径隐藏状态栏</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">15.</span> <span class="nav-text">autolayout中各种疑难杂症</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">16.</span> <span class="nav-text">Xcode大片代码变白色，代码提示不work咋办</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">17.</span> <span class="nav-text">[NSBundle mainBundle]具体路径</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">18.</span> <span class="nav-text">NSDate使用注意事项</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">19.</span> <span class="nav-text">XCode快速插入自定义代码块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">20.</span> <span class="nav-text">NSDictionary技巧</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">21.</span> <span class="nav-text">NSTimer的timeInterval属性</span></a></li></ol></div>
             
 
           </div>
