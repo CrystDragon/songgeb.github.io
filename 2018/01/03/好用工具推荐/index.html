@@ -95,17 +95,17 @@
 
 
 
-<meta name="description" content="推荐一些好用的工具 网络下载类 you-get  当前很多视频网站使用了ts文件形式进行视频播放。分析网页元素，通常能够看到一个以m3u8为后缀的地址，该文件下载下来后，会发现其中包含了很多ts文件链接，这些ts文件便是原视频的一些片段。 可以通过一定算法将这些文件下载下来并拼接到一起。  ffmpeg -i xxx.m3u8 you-get，支持下载各种在线视频，youtube、B站、腾讯视频。">
+<meta name="description" content="推荐一些好用的工具 网络下载类 下载ts(m3u8)类型视频  当前很多视频网站使用了ts文件形式进行视频播放。分析网页元素，通常能够看到一个以m3u8为后缀的地址，该文件下载下来后，会发现其中包含了很多ts文件链接，这些ts文件便是原视频的一些片段。 可以通过一定算法将这些文件下载下来并拼接到一起。  ffmpeg -i xxx.m3u8（如果有m3u8文件，也可以通过ffmpeg命令下载视频并">
 <meta name="keywords" content="工具">
 <meta property="og:type" content="article">
 <meta property="og:title" content="好用工具推荐">
 <meta property="og:url" content="http://songgeb.github.io/2018/01/03/好用工具推荐/index.html">
 <meta property="og:site_name" content="Songgeb">
-<meta property="og:description" content="推荐一些好用的工具 网络下载类 you-get  当前很多视频网站使用了ts文件形式进行视频播放。分析网页元素，通常能够看到一个以m3u8为后缀的地址，该文件下载下来后，会发现其中包含了很多ts文件链接，这些ts文件便是原视频的一些片段。 可以通过一定算法将这些文件下载下来并拼接到一起。  ffmpeg -i xxx.m3u8 you-get，支持下载各种在线视频，youtube、B站、腾讯视频。">
-<meta property="og:updated_time" content="2018-01-03T13:08:30.531Z">
+<meta property="og:description" content="推荐一些好用的工具 网络下载类 下载ts(m3u8)类型视频  当前很多视频网站使用了ts文件形式进行视频播放。分析网页元素，通常能够看到一个以m3u8为后缀的地址，该文件下载下来后，会发现其中包含了很多ts文件链接，这些ts文件便是原视频的一些片段。 可以通过一定算法将这些文件下载下来并拼接到一起。  ffmpeg -i xxx.m3u8（如果有m3u8文件，也可以通过ffmpeg命令下载视频并">
+<meta property="og:updated_time" content="2018-01-11T06:53:48.815Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="好用工具推荐">
-<meta name="twitter:description" content="推荐一些好用的工具 网络下载类 you-get  当前很多视频网站使用了ts文件形式进行视频播放。分析网页元素，通常能够看到一个以m3u8为后缀的地址，该文件下载下来后，会发现其中包含了很多ts文件链接，这些ts文件便是原视频的一些片段。 可以通过一定算法将这些文件下载下来并拼接到一起。  ffmpeg -i xxx.m3u8 you-get，支持下载各种在线视频，youtube、B站、腾讯视频。">
+<meta name="twitter:description" content="推荐一些好用的工具 网络下载类 下载ts(m3u8)类型视频  当前很多视频网站使用了ts文件形式进行视频播放。分析网页元素，通常能够看到一个以m3u8为后缀的地址，该文件下载下来后，会发现其中包含了很多ts文件链接，这些ts文件便是原视频的一些片段。 可以通过一定算法将这些文件下载下来并拼接到一起。  ffmpeg -i xxx.m3u8（如果有m3u8文件，也可以通过ffmpeg命令下载视频并">
 
 
 
@@ -340,12 +340,17 @@
       
         <p>推荐一些好用的工具</p>
 <h2><span id="网络下载类">网络下载类</span></h2><ol>
-<li><p><a href="https://github.com/soimort/you-get" target="_blank" rel="external">you-get</a></p>
+<li><p>下载ts(m3u8)类型视频</p>
 <p> 当前很多视频网站使用了ts文件形式进行视频播放。分析网页元素，通常能够看到一个以<code>m3u8</code>为后缀的地址，该文件下载下来后，会发现其中包含了很多ts文件链接，这些ts文件便是原视频的一些片段。<br> 可以通过一定算法将这些文件下载下来并拼接到一起。</p>
 <ol>
-<li>ffmpeg -i xxx.m3u8</li>
-<li>you-get，支持下载各种在线视频，youtube、B站、腾讯视频。</li>
+<li><code>ffmpeg -i xxx.m3u8</code>（如果有m3u8文件，也可以通过<code>ffmpeg</code>命令下载视频并合成，<a href="https://www.ffmpeg.org/" target="_blank" rel="external">ffmpeg</a>需要单独安装）</li>
+<li><a href="https://github.com/soimort/you-get" target="_blank" rel="external">you-get</a>，支持下载各种在线视频，youtube、B站、腾讯视频。</li>
 </ol>
+</li>
+</ol>
+<h2><span id="多媒体类">多媒体类</span></h2><ol>
+<li><p><a href="https://www.audacityteam.org/" target="_blank" rel="external">Audacity</a></p>
+<p> 免费，音频编辑类工具，功能强大。我主要用它的改变音频播放速度同时又可以保证声明音高等参数不丢失的功能。</p>
 </li>
 </ol>
 
@@ -547,7 +552,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">网络下载类</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">网络下载类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">多媒体类</span></a></li></ol></div>
             
 
           </div>
