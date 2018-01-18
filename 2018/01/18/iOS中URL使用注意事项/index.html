@@ -95,17 +95,17 @@
 
 
 
-<meta name="description" content="NOTE: 本文内容基于Swift 4版本  URL格式 scheme : // net_loc / path ; params ? query # fragment  正常使用URL的姿势： fileURLWithPath123let fileURLStr = &amp;quot;/Users/A/B C/a.json&amp;quot;let url = URL(fileURLWithPath: fileUR">
+<meta name="description" content="NOTE: 本文内容基于Swift 4版本  rfc1808中URL格式 : scheme : // net_loc / path ; params ? query # fragment  正常使用URL的姿势： fileURLWithPath123let fileURLStr = &amp;quot;/Users/A/B C/a.json&amp;quot;let url = URL(fileURLWithPa">
 <meta name="keywords" content="URL">
 <meta property="og:type" content="article">
 <meta property="og:title" content="iOS中URL使用注意事项">
 <meta property="og:url" content="http://songgeb.github.io/2018/01/18/iOS中URL使用注意事项/index.html">
 <meta property="og:site_name" content="Songgeb">
-<meta property="og:description" content="NOTE: 本文内容基于Swift 4版本  URL格式 scheme : // net_loc / path ; params ? query # fragment  正常使用URL的姿势： fileURLWithPath123let fileURLStr = &amp;quot;/Users/A/B C/a.json&amp;quot;let url = URL(fileURLWithPath: fileUR">
-<meta property="og:updated_time" content="2018-01-18T08:42:00.371Z">
+<meta property="og:description" content="NOTE: 本文内容基于Swift 4版本  rfc1808中URL格式 : scheme : // net_loc / path ; params ? query # fragment  正常使用URL的姿势： fileURLWithPath123let fileURLStr = &amp;quot;/Users/A/B C/a.json&amp;quot;let url = URL(fileURLWithPa">
+<meta property="og:updated_time" content="2018-01-18T08:43:44.366Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS中URL使用注意事项">
-<meta name="twitter:description" content="NOTE: 本文内容基于Swift 4版本  URL格式 scheme : // net_loc / path ; params ? query # fragment  正常使用URL的姿势： fileURLWithPath123let fileURLStr = &amp;quot;/Users/A/B C/a.json&amp;quot;let url = URL(fileURLWithPath: fileUR">
+<meta name="twitter:description" content="NOTE: 本文内容基于Swift 4版本  rfc1808中URL格式 : scheme : // net_loc / path ; params ? query # fragment  正常使用URL的姿势： fileURLWithPath123let fileURLStr = &amp;quot;/Users/A/B C/a.json&amp;quot;let url = URL(fileURLWithPa">
 
 
 
@@ -340,7 +340,7 @@
       
         <p>NOTE: 本文内容基于<code>Swift 4</code>版本</p>
 <blockquote>
-<p>URL格式 scheme : // net_loc / path ; params ? query # fragment</p>
+<p>rfc1808中<a href="https://www.w3.org/Addressing/rfc1808.txt" target="_blank" rel="external">URL格式</a> : scheme : // net_loc / path ; params ? query # fragment</p>
 </blockquote>
 <p>正常使用URL的姿势：</p>
 <h3><span id="fileurlwithpath">fileURLWithPath</span></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">let fileURLStr = &quot;/Users/A/B C/a.json&quot;</div><div class="line">let url = URL(fileURLWithPath: fileURLStr)</div><div class="line">print(url)   // file:///Users/A/B%20C/a.json</div></pre></td></tr></table></figure>
