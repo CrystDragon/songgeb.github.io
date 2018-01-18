@@ -102,7 +102,7 @@
 <meta property="og:url" content="http://songgeb.github.io/2018/01/18/iOS中URL使用注意事项/index.html">
 <meta property="og:site_name" content="Songgeb">
 <meta property="og:description" content="NOTE: 本文内容基于Swift 4版本  URL格式 scheme : // net_loc / path ; params ? query # fragment  正常使用URL的姿势： fileURLWithPath123let fileURLStr = &amp;quot;/Users/A/B C/a.json&amp;quot;let url = URL(fileURLWithPath: fileUR">
-<meta property="og:updated_time" content="2018-01-18T08:34:57.995Z">
+<meta property="og:updated_time" content="2018-01-18T08:42:00.371Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS中URL使用注意事项">
 <meta name="twitter:description" content="NOTE: 本文内容基于Swift 4版本  URL格式 scheme : // net_loc / path ; params ? query # fragment  正常使用URL的姿势： fileURLWithPath123let fileURLStr = &amp;quot;/Users/A/B C/a.json&amp;quot;let url = URL(fileURLWithPath: fileUR">
@@ -347,7 +347,7 @@
 <h3><span id="initstring-string">init?(string: String)</span></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">let remoteURLStr = &quot;http://www.baidu.com/a/b/c;pa?q=1#fragment&quot;</div><div class="line">let url1 = URL(string: remoteURLStr)!</div><div class="line">print(url1) // http://www.baidu.com/a/b/c;pa?q=1#fragment</div><div class="line">print(url1.path) // /a/b/c;pa</div><div class="line">print(url1.fragment) // Optional(&quot;fragment&quot;)</div><div class="line">print(url1.query) // Optional(&quot;q=1&quot;)</div><div class="line"></div><div class="line">let remoteURLStr = &quot;http://www.baidu.com/a/b/c;pa?q=我#fragment&quot;</div><div class="line">let url1 = URL(string: remoteURLStr)</div><div class="line">print(url1) // nil</div></pre></td></tr></table></figure>
 <h3><span id="总结">总结</span></h3><ol>
 <li>fileURLWithPath一般用于本地文件</li>
-<li>URL类(Swift)无法识别URL中的<code>params</code>部分</li>
+<li>URL类(Swift)无法识别URL中的<code>params</code>部分，Objective-C中是可以的</li>
 <li><code>fileURLWithPath</code>会自动进行percentEncoding。而<code>init?(string: String)</code>则不会</li>
 </ol>
 <h3><span id="疑问">疑问</span></h3><h4><span id="如果用urlsession对本地文件fileurl发起请求会怎样">如果用urlsession对本地文件fileURL发起请求会怎样</span></h4><p>会正确返回数据，但回调执行在<strong>子线程</strong>中</p>
