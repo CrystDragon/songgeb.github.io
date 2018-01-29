@@ -79,7 +79,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="工具," />
+  <meta name="keywords" content="CGAffineTransform," />
 
 
 
@@ -95,17 +95,23 @@
 
 
 
-<meta name="description" content="推荐一些好用的工具 网络下载类 下载ts(m3u8)类型视频  当前很多视频网站使用了ts文件形式进行视频播放。分析网页元素，通常能够看到一个以m3u8为后缀的地址，该文件下载下来后，会发现其中包含了很多ts文件链接，这些ts文件便是原视频的一些片段。 可以通过一定算法将这些文件下载下来并拼接到一起。  ffmpeg -i xxx.m3u8（如果有m3u8文件，也可以通过ffmpeg命令下载视频并">
-<meta name="keywords" content="工具">
+<meta name="description" content="在学习Core Graphics时，对图形变换的实现原理不太理解，图形变换(transform)在iOS动画框架Core Animation中应用也很多，本文我将通过解释CGAffineTransform的数学原理，尝试给出比较容易理解和使用CGAffineTransform相关API的方法 Mac App中的local coordinate system在向设备（Mac or iPhone）屏幕">
+<meta name="keywords" content="CGAffineTransform">
 <meta property="og:type" content="article">
-<meta property="og:title" content="好用工具推荐">
-<meta property="og:url" content="http://songgeb.github.io/2018/01/03/好用工具推荐/index.html">
+<meta property="og:title" content="iOS中的CGAffineTransform">
+<meta property="og:url" content="http://songgeb.github.io/2018/01/29/iOS中的CGAffineTransform/index.html">
 <meta property="og:site_name" content="Songgeb">
-<meta property="og:description" content="推荐一些好用的工具 网络下载类 下载ts(m3u8)类型视频  当前很多视频网站使用了ts文件形式进行视频播放。分析网页元素，通常能够看到一个以m3u8为后缀的地址，该文件下载下来后，会发现其中包含了很多ts文件链接，这些ts文件便是原视频的一些片段。 可以通过一定算法将这些文件下载下来并拼接到一起。  ffmpeg -i xxx.m3u8（如果有m3u8文件，也可以通过ffmpeg命令下载视频并">
-<meta property="og:updated_time" content="2018-01-11T06:53:48.815Z">
+<meta property="og:description" content="在学习Core Graphics时，对图形变换的实现原理不太理解，图形变换(transform)在iOS动画框架Core Animation中应用也很多，本文我将通过解释CGAffineTransform的数学原理，尝试给出比较容易理解和使用CGAffineTransform相关API的方法 Mac App中的local coordinate system在向设备（Mac or iPhone）屏幕">
+<meta property="og:image" content="http://songgeb.github.io/images/window_coordinate_2x.png">
+<meta property="og:image" content="http://songgeb.github.io/images/equation02.gif">
+<meta property="og:image" content="http://songgeb.github.io/images/333.png">
+<meta property="og:image" content="http://songgeb.github.io/images/111.png">
+<meta property="og:image" content="http://songgeb.github.io/images/2222.png">
+<meta property="og:updated_time" content="2018-01-29T09:04:12.739Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="好用工具推荐">
-<meta name="twitter:description" content="推荐一些好用的工具 网络下载类 下载ts(m3u8)类型视频  当前很多视频网站使用了ts文件形式进行视频播放。分析网页元素，通常能够看到一个以m3u8为后缀的地址，该文件下载下来后，会发现其中包含了很多ts文件链接，这些ts文件便是原视频的一些片段。 可以通过一定算法将这些文件下载下来并拼接到一起。  ffmpeg -i xxx.m3u8（如果有m3u8文件，也可以通过ffmpeg命令下载视频并">
+<meta name="twitter:title" content="iOS中的CGAffineTransform">
+<meta name="twitter:description" content="在学习Core Graphics时，对图形变换的实现原理不太理解，图形变换(transform)在iOS动画框架Core Animation中应用也很多，本文我将通过解释CGAffineTransform的数学原理，尝试给出比较容易理解和使用CGAffineTransform相关API的方法 Mac App中的local coordinate system在向设备（Mac or iPhone）屏幕">
+<meta name="twitter:image" content="http://songgeb.github.io/images/window_coordinate_2x.png">
 
 
 
@@ -135,13 +141,13 @@
 
 
 
-  <link rel="canonical" href="http://songgeb.github.io/2018/01/03/好用工具推荐/"/>
+  <link rel="canonical" href="http://songgeb.github.io/2018/01/29/iOS中的CGAffineTransform/"/>
 
 
 
 
 
-  <title>好用工具推荐 | Songgeb</title>
+  <title>iOS中的CGAffineTransform | Songgeb</title>
   
 
 
@@ -238,7 +244,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://songgeb.github.io/2018/01/03/好用工具推荐/">
+    <link itemprop="mainEntityOfPage" href="http://songgeb.github.io/2018/01/29/iOS中的CGAffineTransform/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="songgeb">
@@ -255,7 +261,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">好用工具推荐</h1>
+          <h1 class="post-title" itemprop="name headline">iOS中的CGAffineTransform</h1>
         
 
         <div class="post-meta">
@@ -267,8 +273,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-03T20:41:47-05:00">
-                2018-01-03
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-29T11:08:35-05:00">
+                2018-01-29
               </time>
             
 
@@ -290,8 +296,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/备忘/" itemprop="url" rel="index">
-                    <span itemprop="name">备忘</span>
+                  <a href="/categories/iOS/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS</span>
                   </a>
                 </span>
 
@@ -307,7 +313,7 @@
 
           
           
-             <span id="/2018/01/03/好用工具推荐/" class="leancloud_visitors" data-flag-title="好用工具推荐">
+             <span id="/2018/01/29/iOS中的CGAffineTransform/" class="leancloud_visitors" data-flag-title="iOS中的CGAffineTransform">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -338,21 +344,88 @@
       
 
       
-        <p>推荐一些好用的工具</p>
-<h2><span id="网络下载类">网络下载类</span></h2><ol>
-<li><p>下载ts(m3u8)类型视频</p>
-<p> 当前很多视频网站使用了ts文件形式进行视频播放。分析网页元素，通常能够看到一个以<code>m3u8</code>为后缀的地址，该文件下载下来后，会发现其中包含了很多ts文件链接，这些ts文件便是原视频的一些片段。<br> 可以通过一定算法将这些文件下载下来并拼接到一起。</p>
+        <p>在学习<code>Core Graphics</code>时，对图形变换的实现原理不太理解，图形变换(transform)在iOS动画框架<code>Core Animation</code>中应用也很多，本文我将通过解释<code>CGAffineTransform</code>的数学原理，尝试给出比较容易理解和使用<code>CGAffineTransform</code>相关API的方法</p>
+<h3><span id="mac-app中的local-coordinate-system">Mac App中的local coordinate system</span></h3><p>在向设备（Mac or iPhone）屏幕上绘制内容时，是要有一个坐标系统的，这个坐标系有一个原点，最简单直接的绘制过程就是，每个待绘制的内容都有自己的坐标和尺寸，根据原点绘制。</p>
+<p>但有个问题，比如像Mac中，可以同时运行多应用，可以有多个Window，所有的内容都依据屏幕的原点来绘制会使得工作变得很复杂。</p>
+<p>于是，<code>Cocoa</code>引入了<code>local coordinate system</code>的概念，也就是设备屏幕Screen、应用Window和View都有自己的坐标系统。每一级内容依据自己的原点绘制，View的内容依据View原点绘制，Window的内容依据Window的原点，以此类推。一级的内容绘制完成后，将内容映射到上一级的坐标系中。如图所示：</p>
+<p><img src="/images/window_coordinate_2x.png" alt=""></p>
+<h3><span id="类比到ios应用上">类比到iOS应用上</span></h3><p>iPhone屏幕一次只能显示一个应用，但和Mac App的原理相似。可以将iPhone内容的显示视为Mac App中的一个Window</p>
+<p>在使用<code>Core Graphics</code>时，<code>CGContext</code>便表示了一个<code>local coordinate system</code>。它显示到iPhone上的过程也是：</p>
 <ol>
-<li><code>ffmpeg -i xxx.m3u8</code>（如果有m3u8文件，也可以通过<code>ffmpeg</code>命令下载视频并合成，<a href="https://www.ffmpeg.org/" target="_blank" rel="external">ffmpeg</a>需要单独安装）</li>
-<li><a href="https://github.com/soimort/you-get" target="_blank" rel="external">you-get</a>，支持下载各种在线视频，youtube、B站、腾讯视频。</li>
+<li>先计算图像在应用的local coordinate system的位置</li>
+<li>映射到设备的屏幕的坐标系下</li>
+</ol>
+<h3><span id="如何在不同坐标系间进行映射">如何在不同坐标系间进行映射</span></h3><p><img src="/images/equation02.gif" alt=""></p>
+<p>该公式表示，(x, y)是一个坐标系的点，通过矩阵相乘后，得出了另一个坐标系下的点(x’, y’)。</p>
+<p>这个被乘的矩阵对应着<code>Core Graphics</code>中的<code>CGAffineTransform</code>，(x, y)和(x’, y’)则分别对应不同<code>CGContext</code>坐标系下的点。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">let context = UIGraphicsGetCurrentContext()!</div><div class="line">print(context.ctm) //CGAffineTransform(a: 2.0, b: 0.0, c: -0.0, d: -2.0, tx: 0.0, ty: 1000.0)</div></pre></td></tr></table></figure>
+<p><code>CGAffineTransform</code>的不同取值可以表示“平移”、“缩放”、“旋转”变换，那么是如何表示的呢？</p>
+<p>我们从<code>CGAffineTransform</code>变换相关的API入手，看一下怎样才能更好地理解变换的过程。</p>
+<h3><span id="三组api">三组API</span></h3><p>iOS中与<code>CGAffineTransform</code>相关的API有三组，分别是：</p>
+<ul>
+<li>CGContext类<ol>
+<li>CGContext.[translate | scale | rotate]</li>
+<li>CGContext.concatenate(transform)</li>
 </ol>
 </li>
+<li>CGAffineTransform类<ol>
+<li>CGAffineTransform.[translate | scale | rotate]</li>
+<li>CGAffineTransform.concatenating(transform)</li>
 </ol>
-<h2><span id="多媒体类">多媒体类</span></h2><ol>
-<li><p><a href="https://www.audacityteam.org/" target="_blank" rel="external">Audacity</a></p>
-<p> 免费，音频编辑类工具，功能强大。我主要用它的改变音频播放速度同时又可以保证声明音高等参数不丢失的功能。</p>
 </li>
+<li>UIKit中<ol>
+<li>UIBezierPath.apply(transform)</li>
 </ol>
+</li>
+</ul>
+<blockquote>
+<p><code>UIKit</code>中的apply方法底层也是在调用<code>CGAffineTransform</code>的方法，只是平常开发中<code>UIKit</code>使用较多，所以这里也提一下</p>
+</blockquote>
+<h4><span id="uibezierpathapplytransform">UIBezierPath.apply(transform)</span></h4><ul>
+<li>UIBezierPath表示要绘制的对象，也就是一个坐标系下的若干点的集合</li>
+<li>参数transform，则是前面公式中的3*3的矩阵</li>
+</ul>
+<p><code>UIBezierPath.apply(transform)</code>的直接结果就是导致了UIBezierPath的坐标发生了变化，上代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">let context = UIGraphicsGetCurrentContext()</div><div class="line">let size = CGSize(width: 20, height: 20)</div><div class="line">let path = UIBezierPath(ovalIn: CGRect(origin: CGPoint.zero, size: size))//一个圆形图案</div><div class="line">print(path.bounds) //(0.0, 0.0, 20.0, 20.0)</div><div class="line">let t1 = CGAffineTransform(translationX: 20, y: 20)</div><div class="line">path.apply(t1)</div><div class="line">print(path.bounds) //(20.0, 20.0, 20.0, 20.0)</div></pre></td></tr></table></figure>
+<p><img src="/images/333.png" alt=""></p>
+<p>这段代码比较容易，可以理解为path这个圆形图案，从(0, 0)移动到了(20, 20)。</p>
+<blockquote>
+<p>由此我们也很容易想到，<code>path.apply(t1)</code>的底层数学实现就是上一小节中的公式，也可写成<code>newPath = path * transform</code></p>
+</blockquote>
+<h4><span id="cgcontext类">CGContext类</span></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">UIGraphicsBeginImageContext(CGSize(width: 500, height: 500))</div><div class="line">let context = UIGraphicsGetCurrentContext()</div><div class="line">let size = CGSize(width: 80, height: 80)</div><div class="line">let path = UIBezierPath(ovalIn: CGRect(origin: CGPoint.zero, size: size))</div><div class="line">print(path.bounds) //(0.0, 0.0, 80.0, 80.0)</div><div class="line">UIColor.white.setFill()</div><div class="line">path.fill()</div></pre></td></tr></table></figure>
+<p><img src="/images/111.png" alt=""></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">context.translateBy(x: 100, y: 100)</div><div class="line">print(path.bounds) //(0.0, 0.0, 80.0, 80.0)</div><div class="line">path.fill()</div></pre></td></tr></table></figure>
+<p><img src="/images/2222.png" alt=""></p>
+<p>从结果来看，path相对于左上角原点的位置变成了(100, 100)，但path的bounds并没有变，直观上看好像是由于<code>context.translate</code>导致了坐标系变了。</p>
+<blockquote>
+<p>从效果上来看，<code>context.translate</code>和<code>path.translate</code>的效果是一致的</p>
+</blockquote>
+<p>我们来看下<code>context.translateBy(x: 100, y: 100)</code>的底层实现，首先看下方法的注释:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">/* Translate the current graphics state&apos;s transformation matrix (the CTM) by</div><div class="line">       `(tx, ty)&apos;. */</div><div class="line">    @available(iOS 2.0, *)</div><div class="line">    public func translateBy(x tx: CGFloat, y ty: CGFloat)</div></pre></td></tr></table></figure>
+<p><code>CTM(current transform matrix)</code>是当前context的坐标系所对应的矩阵:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">print(&quot;context变换前:\(context.ctm)&quot;)</div><div class="line">context.translateBy(x: 100, y: 100)</div><div class="line">print(&quot;context变换前:\(context.ctm)&quot;)</div><div class="line"></div><div class="line">//context变换前:CGAffineTransform(a: 1.0, b: 0.0, c: -0.0, d: -1.0, tx: 0.0, ty: 500.0)</div><div class="line">//context变换后:CGAffineTransform(a: 1.0, b: 0.0, c: -0.0, d: -1.0, tx: 100.0, ty: 400.0)</div></pre></td></tr></table></figure></p>
+<p>我们可以推导出，<strong>newCTM = transform * CTM</strong> (此处的transform在该例中是translateBy(x: 100, y: 100)所对应的矩阵)</p>
+<blockquote>
+<p>此时，如果进一步思考，这个<code>ctm</code>用来做什么的呢？</p>
+</blockquote>
+<p>我猜测<code>ctm</code>是从应用的页面映射到硬件设备屏幕上的矩阵：<code>devicePath = path * newCTM</code></p>
+<p>那么我们把上面的式子展开，就是<code>devicePath = path * transform * CTM</code>，矩阵相乘满足结合律，也可以写成<code>devicePath = (path * transform) * CTM</code>，<br><code>path * transform</code>不就是<code>path.apply(transform)</code>嘛！</p>
+<blockquote>
+<p>但<code>path.apply(transform)</code>和<code>context.translate</code>又不是完全等价的，context改变后，之后的绘制会按照变化后的坐标系进行绘制。所以应该根据需要选择合适的API</p>
+<p><code>CGContext.concatenate(transform)</code>是类似的，只是接收的参数不同</p>
+</blockquote>
+<h4><span id="cgaffinetransform类">CGAffineTransform类</span></h4><p>从上面两小节中可以看出，<code>CGAffineTransform</code>在变化过程中提供了具体变换的数据结构。这一小节中我们需要注意，<code>transform</code>进行叠加时，<strong>顺序很重要</strong>。</p>
+<ul>
+<li><p><code>CGAffineTransform.concatenating(transform)</code></p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">/* Concatenate `t2&apos; to `t1&apos; and return the result:</div><div class="line">    t&apos; = t1 * t2 */</div><div class="line">@available(iOS 2.0, *)</div><div class="line">public func concatenating(_ t2: CGAffineTransform) -&gt; CGAffineTransform</div></pre></td></tr></table></figure>
+<p>  这个没啥问题，<code>t = t1 * t2</code></p>
+</li>
+</ul>
+<ul>
+<li><p><code>CGAffineTransform.[translate | scale | rotate]</code><strong>坑在这里</strong></p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">/* Translate `t&apos; by `(tx, ty)&apos; and return the result:</div><div class="line">     t&apos; = [ 1 0 0 1 tx ty ] * t */</div><div class="line"></div><div class="line">@available(iOS 2.0, *)</div><div class="line">public func translatedBy(x tx: CGFloat, y ty: CGFloat) -&gt; CGAffineTransform</div></pre></td></tr></table></figure>
+<p>  <strong>坑在这里</strong>，如果<code>t = t1.translatedBy(x : 1, y: 1)</code>，则<code>t = CGAffineTransform(translationX: 1, y: 1) * t1</code>。顺序是反过来的。</p>
+</li>
+</ul>
 
       
     </div>
@@ -396,7 +469,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/工具/" rel="tag"># 工具</a>
+            <a href="/tags/CGAffineTransform/" rel="tag"># CGAffineTransform</a>
           
         </div>
       
@@ -409,8 +482,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/12/06/真的可以快乐工作吗/" rel="next" title="真的可以快乐工作吗">
-                <i class="fa fa-chevron-left"></i> 真的可以快乐工作吗
+              <a href="/2018/01/28/如何选择电子血压计/" rel="next" title="我这样选择电子血压计">
+                <i class="fa fa-chevron-left"></i> 我这样选择电子血压计
               </a>
             
           </div>
@@ -418,10 +491,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/01/18/iOS中URL使用注意事项/" rel="prev" title="iOS中URL使用注意事项">
-                iOS中URL使用注意事项 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -562,7 +631,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">网络下载类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">多媒体类</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">Mac App中的local coordinate system</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">类比到iOS应用上</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">3.</span> <span class="nav-text">如何在不同坐标系间进行映射</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">4.</span> <span class="nav-text">三组API</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">4.1.</span> <span class="nav-text">UIBezierPath.apply(transform)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">4.2.</span> <span class="nav-text">CGContext类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">4.3.</span> <span class="nav-text">CGAffineTransform类</span></a></li></ol></li></ol></div>
             
 
           </div>
