@@ -107,7 +107,7 @@
 <meta property="og:image" content="http://songgeb.github.io/images/333.png">
 <meta property="og:image" content="http://songgeb.github.io/images/111.png">
 <meta property="og:image" content="http://songgeb.github.io/images/2222.png">
-<meta property="og:updated_time" content="2018-01-29T09:04:12.739Z">
+<meta property="og:updated_time" content="2018-01-29T09:14:27.351Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS中的CGAffineTransform">
 <meta name="twitter:description" content="在学习Core Graphics时，对图形变换的实现原理不太理解，图形变换(transform)在iOS动画框架Core Animation中应用也很多，本文我将通过解释CGAffineTransform的数学原理，尝试给出比较容易理解和使用CGAffineTransform相关API的方法 Mac App中的local coordinate system在向设备（Mac or iPhone）屏幕">
@@ -426,6 +426,11 @@
 <p>  <strong>坑在这里</strong>，如果<code>t = t1.translatedBy(x : 1, y: 1)</code>，则<code>t = CGAffineTransform(translationX: 1, y: 1) * t1</code>。顺序是反过来的。</p>
 </li>
 </ul>
+<h3><span id="参考">参考</span></h3><ul>
+<li><a href="https://developer.apple.com/library/content/documentation/GraphicsImaging/Conceptual/drawingwithquartz2d/dq_affine/dq_affine.html#//apple_ref/doc/uid/TP30001066-CH204-SW1" target="_blank" rel="external">Quartz 2D Programming Guide</a></li>
+<li><a href="https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/CocoaDrawingGuide/Transforms/Transforms.html" target="_blank" rel="external">Coordinate Systems and Transforms</a></li>
+<li><a href="https://www.raywenderlich.com/34003/core-graphics-tutorial-curves-and-layers" target="_blank" rel="external">Core Graphics Tutorial: Curves and Layers</a></li>
+</ul>
 
       
     </div>
@@ -631,7 +636,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">Mac App中的local coordinate system</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">类比到iOS应用上</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">3.</span> <span class="nav-text">如何在不同坐标系间进行映射</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">4.</span> <span class="nav-text">三组API</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">4.1.</span> <span class="nav-text">UIBezierPath.apply(transform)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">4.2.</span> <span class="nav-text">CGContext类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">4.3.</span> <span class="nav-text">CGAffineTransform类</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">Mac App中的local coordinate system</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">类比到iOS应用上</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">3.</span> <span class="nav-text">如何在不同坐标系间进行映射</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">4.</span> <span class="nav-text">三组API</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">4.1.</span> <span class="nav-text">UIBezierPath.apply(transform)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">4.2.</span> <span class="nav-text">CGContext类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">4.3.</span> <span class="nav-text">CGAffineTransform类</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">5.</span> <span class="nav-text">参考</span></a></li></ol></div>
             
 
           </div>
