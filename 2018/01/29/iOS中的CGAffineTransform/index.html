@@ -104,10 +104,11 @@
 <meta property="og:description" content="在学习Core Graphics时，对图形变换的实现原理不太理解，图形变换(transform)在iOS动画框架Core Animation中应用也很多，本文我将通过解释CGAffineTransform的数学原理，尝试给出比较容易理解和使用CGAffineTransform相关API的方法 Mac App中的local coordinate system在向设备（Mac or iPhone）屏幕">
 <meta property="og:image" content="http://songgeb.github.io/images/window_coordinate_2x.png">
 <meta property="og:image" content="http://songgeb.github.io/images/equation02.gif">
+<meta property="og:image" content="http://songgeb.github.io/images/equation03.gif">
 <meta property="og:image" content="http://songgeb.github.io/images/333.png">
 <meta property="og:image" content="http://songgeb.github.io/images/111.png">
 <meta property="og:image" content="http://songgeb.github.io/images/2222.png">
-<meta property="og:updated_time" content="2018-01-29T10:04:41.978Z">
+<meta property="og:updated_time" content="2018-01-30T06:48:44.512Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS中的CGAffineTransform">
 <meta name="twitter:description" content="在学习Core Graphics时，对图形变换的实现原理不太理解，图形变换(transform)在iOS动画框架Core Animation中应用也很多，本文我将通过解释CGAffineTransform的数学原理，尝试给出比较容易理解和使用CGAffineTransform相关API的方法 Mac App中的local coordinate system在向设备（Mac or iPhone）屏幕">
@@ -356,6 +357,8 @@
 <li>映射到设备的屏幕的坐标系下</li>
 </ol>
 <h3><span id="如何在不同坐标系间进行映射">如何在不同坐标系间进行映射</span></h3><p><img src="/images/equation02.gif" alt=""></p>
+<p>上面的等式等价于：</p>
+<p><img src="/images/equation03.gif" alt=""></p>
 <p>该公式表示，(x, y)是一个坐标系的点，通过矩阵相乘后，得出了另一个坐标系下的点(x’, y’)。</p>
 <p>这个被乘的矩阵对应着<code>Core Graphics</code>中的<code>CGAffineTransform</code>，(x, y)和(x’, y’)则分别对应不同<code>CGContext</code>坐标系下的点。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">let context = UIGraphicsGetCurrentContext()!</div><div class="line">print(context.ctm) //CGAffineTransform(a: 2.0, b: 0.0, c: -0.0, d: -2.0, tx: 0.0, ty: 1000.0)</div></pre></td></tr></table></figure>
@@ -402,12 +405,17 @@
 </blockquote>
 <p>我们来看下<code>context.translateBy(x: 100, y: 100)</code>的底层实现，首先看下方法的注释:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">/* Translate the current graphics state&apos;s transformation matrix (the CTM) by</div><div class="line">       `(tx, ty)&apos;. */</div><div class="line">    @available(iOS 2.0, *)</div><div class="line">    public func translateBy(x tx: CGFloat, y ty: CGFloat)</div></pre></td></tr></table></figure>
-<p><code>CTM(current transform matrix)</code>是当前context的坐标系所对应的矩阵:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">print(&quot;context变换前:\(context.ctm)&quot;)</div><div class="line">context.translateBy(x: 100, y: 100)</div><div class="line">print(&quot;context变换前:\(context.ctm)&quot;)</div><div class="line"></div><div class="line">//context变换前:CGAffineTransform(a: 1.0, b: 0.0, c: -0.0, d: -1.0, tx: 0.0, ty: 500.0)</div><div class="line">//context变换后:CGAffineTransform(a: 1.0, b: 0.0, c: -0.0, d: -1.0, tx: 100.0, ty: 400.0)</div></pre></td></tr></table></figure></p>
+<p><code>CTM(current transform matrix)</code>是当前context的坐标系所对应的矩阵:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">print(&quot;context变换前:\(context.ctm)&quot;)</div><div class="line">context.translateBy(x: 100, y: 100)</div><div class="line">print(&quot;context变换后:\(context.ctm)&quot;)</div><div class="line"></div><div class="line">//context变换前:CGAffineTransform(a: 1.0, b: 0.0, c: -0.0, d: -1.0, tx: 0.0, ty: 500.0)</div><div class="line">//context变换后:CGAffineTransform(a: 1.0, b: 0.0, c: -0.0, d: -1.0, tx: 100.0, ty: 400.0)</div></pre></td></tr></table></figure></p>
 <p>我们可以推导出，<strong>newCTM = transform * CTM</strong> (此处的transform在该例中是translateBy(x: 100, y: 100)所对应的矩阵)</p>
 <blockquote>
 <p>此时，如果进一步思考，这个<code>ctm</code>用来做什么的呢？</p>
 </blockquote>
 <p><code>ctm</code>是从应用的页面映射到硬件设备屏幕上所需的矩阵：<code>devicePath = path * newCTM</code></p>
+<blockquote>
+<p><code>Core Graphics</code>中有获取应用坐标空间到设备坐标空间转换的矩阵的API–<code>context.userSpaceToDeviceSpaceTransform</code></p>
+<p>userToDevice:CGAffineTransform(a: 1.0, b: 0.0, c: -0.0, d: 1.0, tx: 0.0, ty: 0.0)</p>
+<p>ctm:CGAffineTransform(a: 1.0, b: 0.0, c: -0.0, d: -1.0, tx: 0.0, ty: 500.0)</p>
+</blockquote>
 <p>那么我们把上面的式子展开，就是<code>devicePath = path * transform * CTM</code>，矩阵相乘满足结合律，也可以写成<code>devicePath = (path * transform) * CTM</code>，<br><code>path * transform</code>不就是<code>path.apply(transform)</code>嘛！</p>
 <blockquote>
 <p>但<code>path.apply(transform)</code>和<code>context.translate</code>又不是完全等价的，context改变后，之后的绘制会按照变化后的坐标系进行绘制。所以应该根据需要选择合适的API</p>
@@ -590,7 +598,7 @@
             
             <div class="site-state-item site-state-categories">
               
-                <span class="site-state-item-count">23</span>
+                <span class="site-state-item-count">24</span>
                 <span class="site-state-item-name">分类</span>
               
             </div>
