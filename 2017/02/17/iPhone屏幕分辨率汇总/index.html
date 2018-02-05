@@ -95,19 +95,19 @@
 
 
 
-<meta name="description" content="生成universal framework使用lipo命令将模拟器和真机的framework和为可共用的版本 lipo -create -output {输出路径} {framework1} {framework2}  注意此处的framework1和2指的是framework/目录下面的以productname为命名的可执行文件 输出结果也是一个可执行文件，需要和framework其他部分组合到">
+<meta name="description" content="Swift4中CGBitmapInfo&amp;amp;CGImageAlphaInfo的rawValueCGBitmapInfo    value rawValue 备注     alphaInfoMask 31    floatInfoMask 3840    floatComponents 256    byteOrderMask 28672    byteOrder16Little 4096">
 <meta name="keywords" content="iPhone屏幕">
 <meta property="og:type" content="article">
 <meta property="og:title" content="iOS琐碎知识整理">
 <meta property="og:url" content="http://songgeb.github.io/2017/02/17/iPhone屏幕分辨率汇总/index.html">
 <meta property="og:site_name" content="Songgeb">
-<meta property="og:description" content="生成universal framework使用lipo命令将模拟器和真机的framework和为可共用的版本 lipo -create -output {输出路径} {framework1} {framework2}  注意此处的framework1和2指的是framework/目录下面的以productname为命名的可执行文件 输出结果也是一个可执行文件，需要和framework其他部分组合到">
+<meta property="og:description" content="Swift4中CGBitmapInfo&amp;amp;CGImageAlphaInfo的rawValueCGBitmapInfo    value rawValue 备注     alphaInfoMask 31    floatInfoMask 3840    floatComponents 256    byteOrderMask 28672    byteOrder16Little 4096">
 <meta property="og:image" content="http://songgeb.github.io/images/123.png">
 <meta property="og:image" content="http://songgeb.github.io/images/jsontoobj.png">
-<meta property="og:updated_time" content="2018-01-18T09:24:18.224Z">
+<meta property="og:updated_time" content="2018-02-05T08:07:04.269Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS琐碎知识整理">
-<meta name="twitter:description" content="生成universal framework使用lipo命令将模拟器和真机的framework和为可共用的版本 lipo -create -output {输出路径} {framework1} {framework2}  注意此处的framework1和2指的是framework/目录下面的以productname为命名的可执行文件 输出结果也是一个可执行文件，需要和framework其他部分组合到">
+<meta name="twitter:description" content="Swift4中CGBitmapInfo&amp;amp;CGImageAlphaInfo的rawValueCGBitmapInfo    value rawValue 备注     alphaInfoMask 31    floatInfoMask 3840    floatComponents 256    byteOrderMask 28672    byteOrder16Little 4096">
 <meta name="twitter:image" content="http://songgeb.github.io/images/123.png">
 
 
@@ -341,7 +341,111 @@
       
 
       
-        <h3><span id="生成universal-framework">生成universal framework</span></h3><p>使用<code>lipo</code>命令将模拟器和真机的framework和为可共用的版本</p>
+        <h3><span id="swift4中cgbitmapinfoampcgimagealphainfo的rawvalue">Swift4中CGBitmapInfo&amp;CGImageAlphaInfo的rawValue</span></h3><p>CGBitmapInfo</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">value</th>
+<th style="text-align:center">rawValue</th>
+<th style="text-align:center">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">alphaInfoMask</td>
+<td style="text-align:center">31</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">floatInfoMask</td>
+<td style="text-align:center">3840</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">floatComponents</td>
+<td style="text-align:center">256</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">byteOrderMask</td>
+<td style="text-align:center">28672</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">byteOrder16Little</td>
+<td style="text-align:center">4096</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">byteOrder32Little</td>
+<td style="text-align:center">8192</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">byteOrder16Big</td>
+<td style="text-align:center">12288</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">byteOrder32Big</td>
+<td style="text-align:center">16384</td>
+<td style="text-align:center">-</td>
+</tr>
+</tbody>
+</table>
+<p>CGImageAlphaInfo</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">value</th>
+<th style="text-align:center">rawValue</th>
+<th style="text-align:center">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">none</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">premultipliedLast</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">premultipliedFirst</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">last</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">first</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">noneSkipLast</td>
+<td style="text-align:center">5</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">noneSkipFirst</td>
+<td style="text-align:center">6</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">alphaOnly</td>
+<td style="text-align:center">7</td>
+<td style="text-align:center">-</td>
+</tr>
+</tbody>
+</table>
+<h3><span id="生成universal-framework">生成universal framework</span></h3><p>使用<code>lipo</code>命令将模拟器和真机的framework和为可共用的版本</p>
 <p><code>lipo -create -output {输出路径} {framework1} {framework2}</code></p>
 <ol>
 <li>注意此处的framework1和2指的是<code>framework/</code>目录下面的以<code>productname</code>为命名的可执行文件</li>
@@ -829,7 +933,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">生成universal framework</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">较早的WWDC视频没字幕怎么办</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">3.</span> <span class="nav-text">OTA(over the air)方式发布测试包(ipa)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">4.</span> <span class="nav-text">iPhone播放器某些视频不能播放</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">4.1.</span> <span class="nav-text">解决思路</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">4.2.</span> <span class="nav-text">官方支持格式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">4.3.</span> <span class="nav-text">查询视频本身的各项参数(mac 环境)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">5.</span> <span class="nav-text">arc4random</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">6.</span> <span class="nav-text">关于dispatch_once中onceToken</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">7.</span> <span class="nav-text">重签名工具</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">8.</span> <span class="nav-text">provision文件路径</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">9.</span> <span class="nav-text">Mac Finder的webp插件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">10.</span> <span class="nav-text">打包ipa的另一种方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">11.</span> <span class="nav-text">protocol中使用property</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">12.</span> <span class="nav-text">charles证书配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">13.</span> <span class="nav-text">iPhone屏幕尺寸</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">14.</span> <span class="nav-text">架构与机型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">15.</span> <span class="nav-text">机型与内存</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">16.</span> <span class="nav-text">正则表达式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">17.</span> <span class="nav-text">iOS中处理json时注意事项</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">18.</span> <span class="nav-text">如何隐藏status bar</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">18.1.</span> <span class="nav-text">一个开关，两种途径隐藏状态栏</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">19.</span> <span class="nav-text">autolayout中各种疑难杂症</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">20.</span> <span class="nav-text">Xcode大片代码变白色，代码提示不work咋办</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">21.</span> <span class="nav-text">[NSBundle mainBundle]具体路径</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">22.</span> <span class="nav-text">NSDate使用注意事项</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">23.</span> <span class="nav-text">XCode快速插入自定义代码块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">24.</span> <span class="nav-text">NSDictionary技巧</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">25.</span> <span class="nav-text">NSTimer的timeInterval属性</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">Swift4中CGBitmapInfo&CGImageAlphaInfo的rawValue</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">生成universal framework</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">3.</span> <span class="nav-text">较早的WWDC视频没字幕怎么办</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">4.</span> <span class="nav-text">OTA(over the air)方式发布测试包(ipa)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">5.</span> <span class="nav-text">iPhone播放器某些视频不能播放</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">5.1.</span> <span class="nav-text">解决思路</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">5.2.</span> <span class="nav-text">官方支持格式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">5.3.</span> <span class="nav-text">查询视频本身的各项参数(mac 环境)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">6.</span> <span class="nav-text">arc4random</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">7.</span> <span class="nav-text">关于dispatch_once中onceToken</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">8.</span> <span class="nav-text">重签名工具</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">9.</span> <span class="nav-text">provision文件路径</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">10.</span> <span class="nav-text">Mac Finder的webp插件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">11.</span> <span class="nav-text">打包ipa的另一种方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">12.</span> <span class="nav-text">protocol中使用property</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">13.</span> <span class="nav-text">charles证书配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">14.</span> <span class="nav-text">iPhone屏幕尺寸</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">15.</span> <span class="nav-text">架构与机型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">16.</span> <span class="nav-text">机型与内存</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">17.</span> <span class="nav-text">正则表达式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">18.</span> <span class="nav-text">iOS中处理json时注意事项</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">19.</span> <span class="nav-text">如何隐藏status bar</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">19.1.</span> <span class="nav-text">一个开关，两种途径隐藏状态栏</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">20.</span> <span class="nav-text">autolayout中各种疑难杂症</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">21.</span> <span class="nav-text">Xcode大片代码变白色，代码提示不work咋办</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">22.</span> <span class="nav-text">[NSBundle mainBundle]具体路径</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">23.</span> <span class="nav-text">NSDate使用注意事项</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">24.</span> <span class="nav-text">XCode快速插入自定义代码块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">25.</span> <span class="nav-text">NSDictionary技巧</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">26.</span> <span class="nav-text">NSTimer的timeInterval属性</span></a></li></ol></div>
             
 
           </div>
