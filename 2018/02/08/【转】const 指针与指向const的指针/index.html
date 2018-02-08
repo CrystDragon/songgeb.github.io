@@ -79,7 +79,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="医保," />
+  <meta name="keywords" content="const," />
 
 
 
@@ -95,17 +95,17 @@
 
 
 
-<meta name="description" content="本文目的主要是备忘，把教科书式的政策精简成易懂、方便查询的干货。 开始整理医保相关的概念。 中国医保主要分为三种：城镇职工基本医疗保险、城镇居民基本医疗保险、新型农村合作医疗。 通常我们所理解的保险的作用或者说用法是，我们定期交一些钱，等出了事情后，保险部分会赔付我们一笔钱，减轻我们的负担。 城镇职工医疗保险 职工应当参加职工基本医疗保险，由用人单位和职工按照国家规定共同缴纳基本医疗保险费。 无雇">
-<meta name="keywords" content="医保">
+<meta name="description" content="本文转自const 指针与指向const的指针 当使用带有const的指针时其实有两种意思。一种指的是你不能修改指针本身的内容，另一种指的是你不能修改指针指向的内容。听起来有点混淆一会放个例子上来就明白了。 指向const的指针它的意思是指针指向的内容是不能被修改的。两种写法：  const int* p; （推荐） int const* p;  第一种可以理解为，p是一个指针，它指向的内容是co">
+<meta name="keywords" content="const">
 <meta property="og:type" content="article">
-<meta property="og:title" content="医疗保险备忘之城镇职工医疗保险">
-<meta property="og:url" content="http://songgeb.github.io/2017/09/08/医保备忘/index.html">
+<meta property="og:title" content="【转】const 指针与指向const的指针">
+<meta property="og:url" content="http://songgeb.github.io/2018/02/08/【转】const 指针与指向const的指针/index.html">
 <meta property="og:site_name" content="Songgeb">
-<meta property="og:description" content="本文目的主要是备忘，把教科书式的政策精简成易懂、方便查询的干货。 开始整理医保相关的概念。 中国医保主要分为三种：城镇职工基本医疗保险、城镇居民基本医疗保险、新型农村合作医疗。 通常我们所理解的保险的作用或者说用法是，我们定期交一些钱，等出了事情后，保险部分会赔付我们一笔钱，减轻我们的负担。 城镇职工医疗保险 职工应当参加职工基本医疗保险，由用人单位和职工按照国家规定共同缴纳基本医疗保险费。 无雇">
-<meta property="og:updated_time" content="2017-09-13T16:00:58.202Z">
+<meta property="og:description" content="本文转自const 指针与指向const的指针 当使用带有const的指针时其实有两种意思。一种指的是你不能修改指针本身的内容，另一种指的是你不能修改指针指向的内容。听起来有点混淆一会放个例子上来就明白了。 指向const的指针它的意思是指针指向的内容是不能被修改的。两种写法：  const int* p; （推荐） int const* p;  第一种可以理解为，p是一个指针，它指向的内容是co">
+<meta property="og:updated_time" content="2018-02-08T09:26:14.354Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="医疗保险备忘之城镇职工医疗保险">
-<meta name="twitter:description" content="本文目的主要是备忘，把教科书式的政策精简成易懂、方便查询的干货。 开始整理医保相关的概念。 中国医保主要分为三种：城镇职工基本医疗保险、城镇居民基本医疗保险、新型农村合作医疗。 通常我们所理解的保险的作用或者说用法是，我们定期交一些钱，等出了事情后，保险部分会赔付我们一笔钱，减轻我们的负担。 城镇职工医疗保险 职工应当参加职工基本医疗保险，由用人单位和职工按照国家规定共同缴纳基本医疗保险费。 无雇">
+<meta name="twitter:title" content="【转】const 指针与指向const的指针">
+<meta name="twitter:description" content="本文转自const 指针与指向const的指针 当使用带有const的指针时其实有两种意思。一种指的是你不能修改指针本身的内容，另一种指的是你不能修改指针指向的内容。听起来有点混淆一会放个例子上来就明白了。 指向const的指针它的意思是指针指向的内容是不能被修改的。两种写法：  const int* p; （推荐） int const* p;  第一种可以理解为，p是一个指针，它指向的内容是co">
 
 
 
@@ -135,13 +135,13 @@
 
 
 
-  <link rel="canonical" href="http://songgeb.github.io/2017/09/08/医保备忘/"/>
+  <link rel="canonical" href="http://songgeb.github.io/2018/02/08/【转】const 指针与指向const的指针/"/>
 
 
 
 
 
-  <title>医疗保险备忘之城镇职工医疗保险 | Songgeb</title>
+  <title>【转】const 指针与指向const的指针 | Songgeb</title>
   
 
 
@@ -238,7 +238,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://songgeb.github.io/2017/09/08/医保备忘/">
+    <link itemprop="mainEntityOfPage" href="http://songgeb.github.io/2018/02/08/【转】const 指针与指向const的指针/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="songgeb">
@@ -255,7 +255,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">医疗保险备忘之城镇职工医疗保险</h1>
+          <h1 class="post-title" itemprop="name headline">【转】const 指针与指向const的指针</h1>
         
 
         <div class="post-meta">
@@ -267,8 +267,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-08T13:19:37-04:00">
-                2017-09-08
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-08T17:19:00-05:00">
+                2018-02-08
               </time>
             
 
@@ -290,19 +290,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/生活/" itemprop="url" rel="index">
-                    <span itemprop="name">生活</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/生活/备忘/" itemprop="url" rel="index">
-                    <span itemprop="name">备忘</span>
+                  <a href="/categories/基础/" itemprop="url" rel="index">
+                    <span itemprop="name">基础</span>
                   </a>
                 </span>
 
@@ -318,7 +307,7 @@
 
           
           
-             <span id="/2017/09/08/医保备忘/" class="leancloud_visitors" data-flag-title="医疗保险备忘之城镇职工医疗保险">
+             <span id="/2018/02/08/【转】const 指针与指向const的指针/" class="leancloud_visitors" data-flag-title="【转】const 指针与指向const的指针">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -349,18 +338,27 @@
       
 
       
-        <h2><span id="本文目的">本文目的</span></h2><p>主要是备忘，把教科书式的政策精简成易懂、方便查询的干货。</p>
-<h2><span id="开始">开始</span></h2><p>整理医保相关的概念。</p>
-<p>中国医保主要分为三种：城镇职工基本医疗保险、城镇居民基本医疗保险、新型农村合作医疗。</p>
-<p>通常我们所理解的保险的作用或者说用法是，我们定期交一些钱，等出了事情后，保险部分会赔付我们一笔钱，减轻我们的负担。</p>
-<h2><span id="城镇职工医疗保险">城镇职工医疗保险</span></h2><ul>
-<li>职工应当参加职工基本医疗保险，由用人单位和职工按照国家规定<strong>共同缴纳</strong>基本医疗保险费。</li>
-<li>无雇工的个体工商户、未在用人单位参加职工基本医疗保险的非全日制从业人员以及其他灵活就业人员可以参加职工基本医疗保险，由个人按照国家规定缴纳基本医疗保险费。</li>
+        <p>本文转自<a href="http://www.cnblogs.com/younes/archive/2009/12/02/1615348.html" target="_blank" rel="external">const 指针与指向const的指针</a></p>
+<p>当使用带有const的指针时其实有两种意思。一种指的是你不能修改指针本身的内容，另一种指的是你不能修改指针指向的内容。听起来有点混淆一会放个例子上来就明白了。</p>
+<h3><span id="指向const的指针">指向const的指针</span></h3><p>它的意思是指针指向的内容是不能被修改的。两种写法：</p>
+<ul>
+<li>const int* p; （推荐）</li>
+<li>int const* p;</li>
 </ul>
-<h3><span id="交多少">交多少</span></h3><h4><span id="职工">职工</span></h4><p>用人单位缴费率应控制在职工工资总额的6%左右，职工缴费率一般为本人工资收入的2%。具体缴费比例由各统筹地区根据实际情况确定。随着经济发展，用人单位和职工缴费率可作相应调整。目前，用人单位缴费率全国平均为7.43%，最低的为3%，较高的如上海、北京分别达到10%和9%；个人缴费全国平均为2%。</p>
-<h4><span id="灵活就业人员">灵活就业人员</span></h4><p>可自愿参加职工基本医疗保险，需个人按照国家规定缴纳基本医疗保险费。原则上按照当地的缴费率确定。从统筹基金起步的地区，可参照当地基本医疗保险建立统筹基金的缴费水平确定。缴费基数可参照当地上一年度职工年平均工资核定。</p>
-<h2><span id="参考">参考</span></h2><p><a href="http://www.mohrss.gov.cn/SYrlzyhshbzb/rdzt/syshehuibaoxianfa/bxffaguijijiedu/201208/t20120807_28573.htm" target="_blank" rel="external">1. 中华人民共和国社会保险法释义（十二）</a></p>
+<p>第一种可以理解为，p是一个指针，它指向的内容是const int 类型。p本身不用初始化它可以指向任何标示符，但它指向的内容是不能被改变的。</p>
+<p>第二种很容易被理解成是p是一个指向int的const指针（指针本身不能被修改），但这样理解是错误的，它也是表示的是指向const的指针（指针指向的内容是不能被修改的），它跟第一种表达的是一个意思。为了避免混淆推荐大家用第一种。</p>
+<h3><span id="const指针">const指针</span></h3><p>它的意思是指针本身的值是不能被修改的。它只有一种写法：</p>
+<ul>
+<li>int* const p=一个地址; (因为指针本身的值是不能被修改的所以它必须被初始化）</li>
+</ul>
+<p>这种形式可以被理解为，p是一个指针，这个指针是指向int 的const指针。它指向的值是可以被改变的如*p=3;</p>
+<h3><span id="二合一">二合一</span></h3><p>还有一种情况是这个指针本身和它指向的内容都是不能被改变的，请往下看。</p>
+<pre><code>const int* const p=一个地址;
 
+int const* const p=一个地址;
+</code></pre><p>看了上面的内容是不是有点晕，没关系，你不用去背它，用的多了就知道了，还有个技巧，通过上面的观察我们不难总结出一点规律，是什么呢？也许你已经看出来了，什么！竟然没看也来，那只好还得听我唠叨了。这个规律就是： 指向const的指针（指针指向的内容不能被修改）const关健字总是出现在*的左边而const指针（指针本身不能被修改）const关健字总是出现在*的右边，那不用说两个const中间加个*肯定是指针本身和它指向的内容都是不能被改变的。有了这个规则是不是就好记多了。</p>
+<p>什么还是晕，那就看下面的程序，你把它编译一下看看错误提示就明白了。</p>
+<h3><span id="看代码">看代码</span></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">using namespace std;</div><div class="line"></div><div class="line">int main(int argc, char *argv[])</div><div class="line">&#123;</div><div class="line">    int a=3;</div><div class="line">    int b;</div><div class="line">    </div><div class="line">    /*定义指向const的指针（指针指向的内容不能被修改）*/ </div><div class="line">    const int* p1; </div><div class="line">    int const* p2; </div><div class="line">    </div><div class="line">    /*定义const指针(由于指针本身的值不能改变所以必须得初始化）*/ </div><div class="line">    int* const p3=&amp;a; </div><div class="line">    </div><div class="line">    /*指针本身和它指向的内容都是不能被改变的所以也得初始化*/</div><div class="line">    const int* const p4=&amp;a;</div><div class="line">    int const* const p5=&amp;b; </div><div class="line">    </div><div class="line">     p1=p2=&amp;a; //正确</div><div class="line">     *p1=*p2=8; //不正确（指针指向的内容不能被修改）</div><div class="line">    </div><div class="line">     *p3=5; //正确</div><div class="line">     p3=p1; //不正确（指针本身的值不能改变） </div><div class="line">    </div><div class="line">     p4=p5;//不正确 （指针本身和它指向的内容都是不能被改变） </div><div class="line">     *p4=*p5=4; //不正确（指针本身和它指向的内容都是不能被改变） </div><div class="line">     </div><div class="line">    return 0; </div><div class="line">&#125;</div></pre></td></tr></table></figure>
       
     </div>
     
@@ -403,7 +401,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/医保/" rel="tag"># 医保</a>
+            <a href="/tags/const/" rel="tag"># const</a>
           
         </div>
       
@@ -416,8 +414,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/09/01/几种博客评论系统比较/" rel="next" title="几种博客评论系统比较">
-                <i class="fa fa-chevron-left"></i> 几种博客评论系统比较
+              <a href="/2018/02/07/Swift中Manual Memory Management(Swift 4)/" rel="next" title="Manual Memory Management(Swift 4) - UnsafePointer">
+                <i class="fa fa-chevron-left"></i> Manual Memory Management(Swift 4) - UnsafePointer
               </a>
             
           </div>
@@ -425,10 +423,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/09/10/【转】为何谷歌会向视频弹出广告说“不”？不赚钱么？/" rel="prev" title="【转】为何谷歌会向视频弹出广告说“不”？不赚钱么？">
-                【转】为何谷歌会向视频弹出广告说“不”？不赚钱么？ <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -569,7 +563,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">本文目的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">开始</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">3.</span> <span class="nav-text">城镇职工医疗保险</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">3.1.</span> <span class="nav-text">交多少</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">3.1.1.</span> <span class="nav-text">职工</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">3.1.2.</span> <span class="nav-text">灵活就业人员</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">4.</span> <span class="nav-text">参考</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">指向const的指针</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">const指针</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">3.</span> <span class="nav-text">二合一</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">4.</span> <span class="nav-text">看代码</span></a></li></ol></div>
             
 
           </div>
